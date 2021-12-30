@@ -55,9 +55,7 @@ git commit -m "(커밋메세지)"
 **3. repository**  
 working directory의 변경 이력들이 저장되어 있는 영역  
 
-> working directory에서 작업을 하고  
-> 작업한 파일을 ```git add```하여 staging area로 올리고  
-> ```git commit```하여 repository에 저장  
+working directory에서 작업을 하고, 작업한 파일을 ```git add```하여 staging area로 올리고. ```git commit```하여 repository에 저장  
 
 # 03. 커밋 다루기
 ## 커밋 히스토리 살펴보기
@@ -102,13 +100,13 @@ git reset --(옵션) (커밋 해시)
  세가지 영역 모두 바뀜  
  전부 예전으로 돌리고 싶을 때
 
- > 커밋 해시(아이디) 대신 `^` 또는 ~n 사용  
+ > 커밋 해시(아이디) 대신 ^ 또는 ~n 사용  
  > `HEAD^` : HEAD의 바로 이전 커밋 의미  
  > `HEAD~2` : HEAD의 2단계 이전 커밋 의미
 
 ## 커밋에 tag 달기
 ```
-git tag (태그 이름) (커밋∏해시∏
+git tag (태그 이름) (커밋 해시)
 ```  
 보통 프로젝트에서 주요 버전의 시작점이 되는 커밋에 태그 이용
 
