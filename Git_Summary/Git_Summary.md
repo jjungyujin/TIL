@@ -1,4 +1,4 @@
-# 01. Git 시작하기
+# 📎 01. Git 시작하기
 ## Git과 GitHub란 ?
 > Git : 버전관리를 위한 도구  
 > Github : 원격 저장소, 외부의 서버 제공
@@ -12,7 +12,7 @@
 ## Git의 역사
 Git은 리눅스(Linux)라는 운영 체제를 만든 리누스 토발즈가 만들었다.
 
-# 02. Git 써보기
+# 📎 02. Git 써보기
 ## 레포지토리(repository)
 git이 프로젝트 디렉토리의 변화 과정을 기록하는 곳  
 프로젝트 디렉토리의 변화 과정을 기록하는 곳  
@@ -57,7 +57,7 @@ working directory의 변경 이력들이 저장되어 있는 영역
 
 working directory에서 작업을 하고, 작업한 파일을 ```git add```하여 staging area로 올리고. ```git commit```하여 repository에 저장  
 
-# 03. 커밋 다루기
+# 📎 03. 커밋 다루기
 ## 커밋 히스토리 살펴보기
 ```
 git log
