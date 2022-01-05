@@ -8,10 +8,10 @@ HTML의 내용을 스타일링
 ## CSS 기본 문법
 ```
 <style>  
-스타일링할 요소 {속성 : 속성값}  
+스타일링할 요소 {속성 : 속성값;}  
 </style>
 ```
-**스타일링할 html 코드**
+**스타일링할 HTML 코드**
 ```
 <!DOCTYPE html>
 
@@ -24,3 +24,44 @@ HTML의 내용을 스타일링
 
 <p> I'm practicing <b>html</b> with <i>code it</i> lecture. </p>
 ```
+**CSS 코드**
+```
+<style>
+h1 {
+    font-size: 64px;
+    text-align: center;
+}
+
+h3 {
+    margin-top: 100px;
+}
+
+p i {
+    font-size: 36px;
+}
+</style>
+```
+동일한 태그명이 여러번 쓰인 경우 해당 태그가 속한 바깥 태그명을 같이 명시해주면 구분 가능 (```p i``` / ```h2 i```)
+
+## CSS 기본 속성
+- **폰트 크기**  
+```font-size: 72px;```  
+
+- **텍스트 정렬**  
+```text-align: (right / left / center);```
+
+- **텍스트 색**  
+```color: lime;```  
+
+- **여백**  
+```margin-bottom: 80px;```  
+```margin-left: 50px;```
+
+## CSS 태그
+1. ```<html>```  
+전체 코드를 감싸주는 태그
+2. ```<head>```  
+title, meta, css, js 코드를 감싸주는 태그
+2. ```<body>```  
+웹 사이트에 보여질 내용을 감싸주는 태그
+> [codeit_practice_file](https://github.com/jjungyujin/TIL/blob/main/CSS/codeit_pracitce.html)
