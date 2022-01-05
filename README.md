@@ -10,3 +10,6 @@
 
 ### 📎 HTML
 - [HTML](https://github.com/jjungyujin/TIL/blob/main/HTML/HTML.md)
+
+### 📎 CSS
+- [CSS](https://github.com/jjungyujin/TIL/blob/main/CSS/CSS.md)
