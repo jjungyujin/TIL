@@ -48,11 +48,32 @@ soup = BeatifulSoup(res.content, 'html.parser')
 
 ## 04. 필요한 데이터 추출하기
 ### 원하는 데이터 지정하기
-방법 1. 태그와 속성으로 선택하기
+방법 1. 태그와 속성으로 선택하기  
+> html 코드
+```
+html = """
+<html>
+    <body>
+        <h1 id='title'> [1] 크롤링이란? </h1>
+        <p class='cssstyle'>웹페이지에서 필요한 데이터를 추출하는 것</p>
+        <p id='body' align='center'>파이썬을 중심으로 다양한 웹크롤링 기술 발달</p>
+    </body>
+</html>
+"""
+```
+> 동일한 태그 문장 중 특정 문장 지정하기
+- `(태그)`, `(id)`, `(class)`
+- `(태그, id= )` , `(태그, class_= )`, `(태그, align= )`
+- `(태그, attrs = {'속성': '속성값'})`
 ```
 crawling_data = soup.find('h1')
-crawling_data = soup.find(id = 'title')
+crawling_data = soup.find('title')
+crawling_data = soup.find('h1', class_='cssstyle')
 crawling_data = soup.find('p', attrs = {'align': 'center'})
+```
+> 해당 태그의 모든 문장(의 리스트) 가져오기
+```
+crawling_data = soup.find_all('p')
 ```
 
 방법 2. CSS Selector로 선택하기
