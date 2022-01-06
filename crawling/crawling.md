@@ -63,7 +63,7 @@ crawling_data = soup.select('#harmonyContainer')
 ```
 
 ### 데이터 추출하기
-`.get_text()` 함수로 필요한 부분을 가져옴
+`.get_text()` 함수로 태그를 제외한 내용을 가져옴
 ```
 print(crawling_data.get_text())
 ```
