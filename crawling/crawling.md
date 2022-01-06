@@ -11,6 +11,14 @@
 2. 해당 컴퓨터(통신하려는 컴퓨터)에 가서 주소에 알맞는 HTML 파일을 전송받음
 3. HTML 파일을 변환하여 내 컴퓨터의 웹 브라우저에서 보여줌
 
+### 모듈 설치
+```
+python3 -m pip install --upgrade pip
+pip install requests
+pip install bs4
+```
+이미 pip가 업그레이드 되어있다면 바로 install하기
+
 ## 01. 라이브러리 import
 ### 필요 라이브러리
 - requests  
@@ -54,8 +62,8 @@ crawling_data = soup.select('div.article_view')
 crawling_data = soup.select('#harmonyContainer')
 ```
 
-### 추출한 데이터 출력하기
-`.get_text()` 함수로 추출한 부분을 가져옴
+### 데이터 추출하기
+`.get_text()` 함수로 필요한 부분을 가져옴
 ```
 print(crawling_data.get_text())
 ```
