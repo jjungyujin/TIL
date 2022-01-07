@@ -42,9 +42,10 @@ res = requests.get('크롤링할 사이트의 주소')
 
 ### 파싱하기 (BeatifulSoup)
 ```
-soup = BeatifulSoup(res.content, 'html.parser')
+soup = BeatifulSoup(res.content.decode('euc-kr', 'replace'), 'html.parser')
 ```
-`soup`에 HTML파일을 파싱한 정보가 들억감
+`soup`에 HTML파일을 파싱한 정보가   
+한글 인코딩을 위해 decode 필요
 
 ## 04. 필요한 데이터 추출하기
 ### 원하는 데이터 지정하기
