@@ -112,3 +112,16 @@ print(crawling_data.string)
 ## 05. 데이터 전처리
 - `strip()` : 공백 제거
 - `split()` : 지정된 값을 기준으로 좌우로 데이터를 나눔, list로 리턴
+
+## 06. urllilb 라이브러리
+### requests와의 차이
+`requests.get()`은 객체를 반환하며 `.content`로 데이터를 불러오지만 `urlopen`은 데이터를 바로 불러옴
+
+### urllib 라이브러리로 작성한 코드
+```
+from urllib.request import urlopen
+from bs4 import BeatifulSoup
+
+res = urlopen('크롤링할 사이트의 주소')
+soup = BeatifulSoup(res, 'html.parser')
+```
