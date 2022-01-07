@@ -4,7 +4,7 @@
 ## HTML의 역할
 웹 사이트에 들어갈 내용을 담당
 
-## HTML 태그(요소)
+## HTML 텍스트 태그(요소)
 ```<시작태그> 내용 </종료태그>```  
 
 **기본 태그**  
@@ -30,11 +30,12 @@ HTML 파일을 쓸 때 파일의 타입 선언
 <p> I'm practicing html with code it lecture. </p>
 ```
 
-**굵게 쓰기, 날려 쓰기**
+**굵게 쓰기, 날려 쓰기, 줄바꿈**
 1. 굵게 쓰기(bold) - ```<b>```
-1. 날려 쓰기(italic) - ```<i>```
+2. 날려 쓰기(italic) - ```<i>```
+3. 줄바꿈(enter) - ```<br>```
 ```
-<h2> I <i>love</i> html ! </h2>
+<h2> I <i>love</i> html ! </h2><br>
 
 <p> I'm practicing <b>html</b> with <i>code it</i> lecture. </p>
 ```
@@ -47,3 +48,32 @@ HTML 파일을 쓸 때 파일의 타입 선언
 <meta charset = "utf-8">
 <h3> HTML 학습을 위한 페이지 </h3>
 ```
+
+## HTML 이미지 태그
+```
+<img src="이미지 파일" width ="너비" height="높이">
+```
+HTML 파일이 있는 폴더에 이미지 저장  
+width, height를 설정하지 않으면 기존 크기대로 설정됨  
+경우에 따라 `id`를 설정하기도 함
+
+## 구조화된 태그 (표 만들기)
+```
+<table border="1">
+    <thead>
+        <tr>
+            <th>1*1</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1*1</td>
+        </tr>
+    </tbody>
+</table>
+```
+- `border` : 테이블의 경계선 굵기  
+- `thead` : 테이블의 가장 상단 (주로 머리글)  
+- `tbody` : 테이블의 본문  
+- `tr` : 테이블의 한 행  
+- `th`, `td` : 해당 행의 열, 머리글에서의 열과 본문에서의 열의 수가 같아야 함
