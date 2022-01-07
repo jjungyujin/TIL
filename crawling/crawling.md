@@ -63,7 +63,7 @@ html = """
 <html>
     <body>
         <h1 id='title'> [1] 크롤링이란? </h1>
-        <p class='cssstyle'>웹페이지에서 필요한 데이터를 추출하는 것</p>
+        <p class='cssstyle'>웹페이지에서 <b>필요한</b> 데이터를 추출하는 것</p>
         <p id='body' align='center'>파이썬을 중심으로 다양한 웹크롤링 기술 발달</p>
     </body>
 </html>
@@ -84,15 +84,31 @@ crawling_data = soup.find('p', attrs = {'align': 'center'})
 crawling_data = soup.find_all('p')
 ```
 
-방법 2. CSS Selector로 선택하기
+방법 2. CSS Selector로 선택하기  
+- 스페이스로 하위 태그 지정  
+- 바로 아래 있는 태그를 조건으로 설정하려면 `>`로 지정
+- `.클래스 이름` 또는 `#id`으로 검색 가능
+- 하나의 태그에 여러개의 클래스가 있고 id까지 있는 경우 `.`으로 연결
 ```
-crawling_data = soup.select('html > title')
+crawling_data = soup.select('body b')
+crawling_data = soup.select('p > b)
 crawling_data = soup.select('div.article_view')
 crawling_data = soup.select('#harmonyContainer')
 ```
+결과값은 (객체들의) 리스트 형태로 반환됨  
+매칭되는 첫번째 데이터만 얻으려면 `select_one()`
 
-### 데이터 추출하기
-`.get_text()` 함수로 태그를 제외한 내용을 가져옴
+### 지정한 것에서 또 지정하기
+- `find()`로 더 크게 감싸는 HTML 태그를 지정하고, 추출된 데이터(객체)에서 `find_all()`로 원하는 부분을 지정  
+- `find() / select()`로 가져온 객체에 `find() / select()` 사용 가능(호환 가능)
+
+### 텍스트 데이터만 추출하기
 ```
 print(crawling_data.get_text())
+print(crawling_data.get_string())
+print(crawling_data.string)
 ```
+
+## 05. 데이터 전처리
+- `strip()` : 공백 제거
+- `split()` : 지정된 값을 기준으로 좌우로 데이터를 나눔, list로 리턴
