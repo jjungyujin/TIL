@@ -15,7 +15,7 @@
 1. 크롬 브라우저 실행
 2. 오른쪽 마우스 - 페이지 소스 보기
 
-### 모듈 설치
+### 터미널에서 모듈 설치
 ```
 python3 -m pip install --upgrade pip
 pip install requests
@@ -136,3 +136,49 @@ print(crawling_data.string)
 ## 05. 데이터 전처리
 - `strip()` : 공백 제거
 - `split()` : 지정된 값을 기준으로 좌우로 데이터를 나눔, list로 리턴
+
+## 06. 엑셀 파일로 데이터 저장하기
+### 터미널에서 모듈 설치
+```
+pip install openpyxl
+```
+### 엑셀 파일과 쉬트 생성
+엑셀 파일이 생성되면 default sheet가 자동 생성되며 `.activate`로 해당 쉬트 선택 가능
+```
+import openpyxl
+
+excel_file = openpyxl.Workbook()
+excel_sheet = excel_file.activate
+excel_sheet.title = '변경할 시트 이름'
+```
+### 데이터 추가하기
+`append`를 호출하여 리스트 타입의 데이터를 넘겨주면 한 행에 차례대로 데이터 입력
+`append`를 호출할 때마다 다음 행으로 넘어감
+```
+excel_sheet.append(data_list)
+```
+
+### 파일 저장하고 닫기
+리소스 효율을 위해 파일을 처리하고 나면 닫아주기
+```
+excel_file.save('저장할 파일명')
+excel_file.close()
+```
+
+### 함수로 작성하기
+코드의 가독성과 문제 해결의 편리성을 위해 엑셀 파일 저장 기능을 함수로 작성
+```
+import openpyxl
+
+def write_tempplate(filename, sheetname, listdata):
+    excel_file = openpyxl.Workbook()
+    excel_sheet = excel_file.activate
+
+    if sheetname != '':
+        excel_sheet.title = sheetname
+    
+    for item in listdata:
+        excel_sheet.append(item)
+    excel_file.save(filename)
+    excel_file.close()
+```
