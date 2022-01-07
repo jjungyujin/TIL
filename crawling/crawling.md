@@ -52,6 +52,9 @@ soup = BeatifulSoup(res.content.decode('euc-kr', 'replace'), 'html.parser')
 한글 인코딩을 위해 decode 필요
 
 ## 04. 필요한 데이터 추출하기
+### 크롬 개발자 모드
+단축기 Command + option + i (맥)
+
 ### 원하는 데이터 지정하기
 방법 1. 태그와 속성으로 선택하기  
 > html 코드
