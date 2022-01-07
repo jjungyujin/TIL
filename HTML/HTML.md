@@ -59,15 +59,17 @@ width, height를 설정하지 않으면 기존 크기대로 설정됨
 
 ## 구조화된 태그 (표 만들기)
 ```
-<table border="1">
+<table border="1" width="500">
     <thead>
         <tr>
-            <th>1*1</th>
+            <th>학번</th>
+            <th>이름</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td>1*1</td>
+            <td>202012452</td>
+            <td>정유진</td>
         </tr>
     </tbody>
 </table>
