@@ -40,6 +40,16 @@ res = requests.get('크롤링할 사이트의 주소')
 ```
 `res.content`에 해당 사이트의 HTML 파일이 저장됨
 
+### 여러 페이지 한번에 크롤링하기
+반복문을 통해 바뀌는 url 주소 불러오기
+```
+for page_num in range(10):
+    if page_num == 0:
+        res = requests.get('http://davelee-fun.github.io/')
+    else :
+        res = requests.get('http://davelee-fun.github.io/page' + str(page_num+1))
+```
+
 ## 03. 웹페이지 파싱(parsing)하기
 ### 파싱이란 ?
 문자열의 의미 분석
@@ -113,7 +123,7 @@ print(crawling_data.string)
 - `strip()` : 공백 제거
 - `split()` : 지정된 값을 기준으로 좌우로 데이터를 나눔, list로 리턴
 
-## 06. urllilb 라이브러리
+## 06. urllib 라이브러리
 ### requests와의 차이
 `requests.get()`은 객체를 반환하며 `.content`로 데이터를 불러오지만 `urlopen`은 데이터를 바로 불러옴
 
@@ -125,3 +135,4 @@ from bs4 import BeatifulSoup
 res = urlopen('크롤링할 사이트의 주소')
 soup = BeatifulSoup(res, 'html.parser')
 ```
+
