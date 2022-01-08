@@ -173,6 +173,8 @@ import openpyxl
 def write_tempplate(filename, sheetname, listdata):
     excel_file = openpyxl.Workbook()
     excel_sheet = excel_file.activate
+    excel_sheet.column_dimentions['A'].width = 100
+    excel_sheet.column_dimentions['B'].width = 30
 
     if sheetname != '':
         excel_sheet.title = sheetname
@@ -181,4 +183,16 @@ def write_tempplate(filename, sheetname, listdata):
         excel_sheet.append(item)
     excel_file.save(filename)
     excel_file.close()
+```
+
+### 만들어진 엑셀 파일 오픈, 읽기, 닫기
+```
+excel_file = openpyxl.load_workbook('엑셀 파일 이름')
+excel_file.sheetnames
+
+excel_sheet = excel_file["시트 이름"]
+for item in excel_sheet.rows:
+    print(item[0].value, item[1].value)
+    
+excel_file.close()
 ```
