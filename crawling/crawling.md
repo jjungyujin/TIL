@@ -172,9 +172,9 @@ import openpyxl
 
 def write_tempplate(filename, sheetname, listdata):
     excel_file = openpyxl.Workbook()
-    excel_sheet = excel_file.activate
-    excel_sheet.column_dimentions['A'].width = 100
-    excel_sheet.column_dimentions['B'].width = 30
+    excel_sheet = excel_file.active
+    excel_sheet.column_dimensions['A'].width = 100
+    excel_sheet.column_dimensions['B'].width = 30
 
     if sheetname != '':
         excel_sheet.title = sheetname
