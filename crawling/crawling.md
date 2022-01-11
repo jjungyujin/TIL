@@ -46,22 +46,11 @@ res = requests.get('크롤링할 사이트의 주소')
 ```
 `res.content`에 해당 사이트의 HTML 파일이 저장됨
 
-### urllib 라이브러리를 사용하는 경우
-**requests와의 차이**  
-`requests.get()`은 객체를 반환하며 `.content`로 데이터를 불러오지만 `urlopen()`은 데이터를 바로 불러옴
-```
-res = urlopen('크롤링할 사이트의 주소')
-soup = BeatifulSoup(res, 'html.parser')
-```
-
 ### 여러 페이지 한번에 크롤링하기
 반복문을 통해 바뀌는 url 주소 불러오기
 ```
 for page_num in range(10):
-    if page_num == 0:
-        res = requests.get('http://davelee-fun.github.io/')
-    else :
-        res = requests.get('http://davelee-fun.github.io/page' + str(page_num+1))
+    res = requests.get(f"http://davelee-fun.github.io/page{page_num}")
 ```
 
 ## 03. 웹페이지 파싱(parsing)하기
@@ -75,6 +64,12 @@ soup = BeatifulSoup(res.content.decode('euc-kr', 'replace'), 'html.parser')
 `soup`에 HTML파일을 파싱한 정보가   
 한글 인코딩을 위해 decode 필요
 
+### urllib 라이브러리를 사용하는 경우  
+`requests.get()`은 객체를 반환하며 `.content`로 데이터를 불러오지만 `urlopen()`은 데이터를 바로 불러옴
+```
+res = urlopen('크롤링할 사이트의 주소')
+soup = BeatifulSoup(res, 'html.parser')
+```
 ## 04. 필요한 데이터 추출하기
 ### 크롬 개발자 모드
 단축기 Command + option + i (맥)
@@ -137,7 +132,15 @@ print(crawling_data.string)
 - `strip()` : 공백 제거
 - `split()` : 지정된 값을 기준으로 좌우로 데이터를 나눔, list로 리턴
 
-## 06. 엑셀 파일로 데이터 저장하기
+## 06. csv 파일로 데이터 저장하기
+정보를 담은 이차원 리스트를 데이터프레임으로 나타내고 csv로 저장하기
+```
+import pandas as pd
+df = pd.DataFrame(저장할 데이터)
+df.to_csv('저장경로/파일명')
+```
+
+## 07. 엑셀 파일로 데이터 저장하기
 ### 터미널에서 모듈 설치
 ```
 pip install openpyxl
@@ -195,4 +198,61 @@ for item in excel_sheet.rows:
     print(item[0].value, item[1].value)
     
 excel_file.close()
+```
+
+## 08. Selenium으로 크롤링하기
+### Selenium
+웹을 테스트하기 위한 프레임워크
+
+### 사전준비
+> Selenium 설치
+```
+pip install selenium
+```
+
+> 자신의 chrome 브라우저 버전에 맞는 chromedriver 설치  
+[chromedriver 설치 페이지]("https://chromedriver.chromium.org/downloads")  
+원하는 디렉토리에 저장
+
+### 필요 라이브러리
+- webdriver  
+웹 테스트 자동화를 위해 제공되는 도구  
+각 브라우저 및 os 별로 존재
+- time  
+브라우저를 제어하고 로딩이 완료될 때까지의 시간을 고려하기 위한 라이브러리
+```
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+import time
+```
+
+### driver 불러오기
+chromedriver가 저장된 절대경로로 불러옴
+```
+chromedriver = "/Users/jung_yujin/workspace/2021_TMTC/gemini-project/chromedriver"
+driver = webdriver.Chrome(chromedriver)
+```
+
+### 웹 사이트 열기
+```
+driver.get('사이트 주소')
+```
+
+### 크롤링하기
+주요 함수
+- `find_element_by_css_selector(태그 정보)` : 최초 발견한 데이터(객체)만 가져오기
+- `find_elemnets_by_css_selectors(태그 정보)` : 모든 데이터(객체) 리스트로 가져오기
+- `time.sleep(시간)` : 일정 시간 브러우저 내용 확인할 수 있도록 하기
+- `.text` : 객체의 텍스트 정보 추출하기
+- `driver.quit()` : 브라우저 끝내기
+
+크롤링 가술
+- 페이지 요소 클릭하기 : `.click`
+```
+driver.find_elements_by_css_selector(REGION_LIST_TAG)[region_num].click()
+```
+- 스크롤 내리기  
+브라우저에서 클릭을 할 요소가 있는 화면으로 스크롤을 이동시켜야 함
+```
+driver.execute_script(window.scrollTo(0, 800))
 ```
