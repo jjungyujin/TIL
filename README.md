@@ -16,3 +16,6 @@
 
 ### 📎 Crawling
 - [Crawling](https://github.com/jjungyujin/TIL/blob/main/crawling/crawling.md)
+
+### 📎 JavaScript
+- [JavaScript](https://github.com/jjungyujin/TIL/blob/main/JavaScript/JavaScript.md)
