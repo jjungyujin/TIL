@@ -1,26 +1,23 @@
-// 변수 선언
-let espressoPrice = 3000;
-let lattePrice = 4300;
-let mochaPrice = 4800;
+const myNumberTag = document.getElementById('myNumber');
+const decreaseBtn = document.getElementById('decrease');
+const increaseBtn = document.getElementById('increase');
 
-console.log(espressoPrice*2);
-comsole.log(lattePrice*4 + mochaPrice*2);
+let myNumber = +myNumberTag.textContent;
 
-
-function greeting() {
-  console.log('Hi');
-  console.log('안녕');
-  console.log('Bonjour');
+decreaseBtn.onclick = function() {
+  myNumber--;
+  myNumberTag.textContent = myNumber;
 };
 
-function welcome(name) {
-  console.log('안녕하세요 ' + name + '님!');
+increaseBtn.onclick = function() {
+  myNumber++;
+  myNumberTag.textContent = myNumber;
 };
 
-function printSquare(x) {
-  console.log(x * x);
-};
+const colorBtns = document.getElementsByClassName('color-btn');
 
-greeting();
-welcome('코드잇');
-printSquare(2);
+for (let btn of colorBtns) {
+  btn.onclick = function() {
+    myNumberTag.style.color = btn.dataset.color;
+  };
+}
