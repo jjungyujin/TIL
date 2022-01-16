@@ -19,3 +19,6 @@
 
 ### 📎 JavaScript
 - [JavaScript](https://github.com/jjungyujin/TIL/blob/main/JavaScript/JavaScript.md)
+
+### 📎 Web Programming
+- [Web Programming](https://github.com/jjungyujin/TIL/blob/main/JavaScript/JavaScript.md)

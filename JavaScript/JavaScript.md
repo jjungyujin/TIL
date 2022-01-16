@@ -85,3 +85,103 @@ btn.onclick = function() {
   console.log('Hello Codeit!');
 }
 ```
+
+## 02. 브라우저와 자바스크립스
+### 브라우저 객체
+`window` : 전역객체 (Global Object)  
+자바스크립트의 최상단에 존재하는 객체
+
+### DOM
+Document Object Model (문서 객체 모델)  
+html 문서 내의 모든 태그들은 개별적인 객체로 다룰 수 있음
+```
+console.log(document); // 태그 형태로 반환
+console.log(typeof document); // object
+console.dir(document); // 객체 형태로 반한
+```
+
+### DOM 트리
+DOM 트리 내의 객체 : `Node` 
+- 태그를 표현하는 노드 : 요소 노드  
+- 텍스트를 표현하는 노드 : 텍스트 노드  
+
+계층 구조 (부모 노드 - 자식 노드, 형재 노드)
+> `document - html - head, body`  
+
+### DOM 트리 여행하기
+> (html 코드)[]
+```
+const myTag = document.querySelector('#list-1');
+console.log(myTag);
+
+// 형제 요소 노드
+console.log(myTag.previousElementSibling);
+console.log(myTag.nextElementSibling);
+
+// 부모 요소 노드
+console.log(myTag.parentElement);
+
+// 자식 요소 노드
+console.log(myTag.children[1]);
+console.log(myTag.firstElementChild);
+console.log(myTag.lastElementChild);
+```
+
+### 요소 노드 주요 프로퍼티
+1. innerHTML
+요소 안의 html을 문자열로 리턴  
+태그들 사이의 들여쓰기와 줄바꿈 포함  
+요소 안의 html을 수정/추가할 때 사용
+```
+console.log(myTag.innerHTML);
+myTag.innerHTML += '<li>Exotic</li>';
+```
+
+2. outerHTML
+해당 요소를 포함한 전체의 html 코드를 리턴  
+단, 요소에 새로운 html 요소를 할당하면 기존의 html 요소는 완전히 사라짐
+
+3. textContent
+요소 안의 내용 중 html 태그 부분을 제외한 부분 리턴  
+```
+myTag.textContent = 'new text';
+```
+
+### 요소 노드 추가하기
+1. 요소 노드 만들기
+```
+const first = document.createElement('li');
+```
+
+2. 요소 노드 꾸미기
+```
+first.textContent = '처음';
+```
+
+3. 요소 노드 추가하기
+```
+// 자식 노드로 추가 : Node.prepend, append
+// 형제 노드로 추가 : Node.before, after
+tomorrow.prepend(first);
+```
+
+## 03. 이벤트 살펴보기
+### 하나의 이벤트에 여러 개의 독립적인 핸들러 등록하기
+```
+let btn = document.querySelector('#myBtn');
+
+function event1(){
+  console.log('Hi codeit!');
+}
+function event2(){
+  console.log('Hi again!');
+}
+
+// elem.addEventListener(event, handler);
+btn.addEventListener('click', event1);
+btn.addEventListener('click', event2);
+```
+> 핸들러 제거하기
+```
+btn.removeEventListener('click', event2);
+```
