@@ -1,25 +1,25 @@
 // 입력창 핸들러 등록
 const inputBoxTag = document.getElementById("inputBox");
 
-function resetInputBox(){
-  inputBoxTag.value = null;
-}
-
 function enterKey() {
   if (window.event.keyCode == 13) {
-    newToDo = document.getElementById("inputBox").value;
-    addToDoList(newToDo);
+    newToDoText = document.getElementById("inputBox").value;
+    addToDoList(newToDoText);
     resetInputBox();
   }
 }
 
-function addToDoList(newToDo) {
+function resetInputBox(){
+  inputBoxTag.value = null;
+}
+
+function addToDoList(newToDoText) {
   const toDoListTableTag = document.getElementById("toDoListTable");
   let newRow = toDoListTableTag.insertRow(1);
   let newCell1 = newRow.insertCell(0);
 
   newCell1.innerHTML = '<input type="checkbox" />';
-  newCell1.innerHTML += ('<input type="text" class="toDo" value="' + newToDo + '" readOnly="true"  />');
+  newCell1.innerHTML += ('<input type="text" class="toDo" value="' + newToDoText + '" readOnly="true"  />');
   newCell1.innerHTML += '<input type="button" class="edit" onclick="editToDo(this)" value="수정">';
   newCell1.innerHTML += '<input type="button" class="save" onclick="saveToDo(this)" value="저장">';
 }
