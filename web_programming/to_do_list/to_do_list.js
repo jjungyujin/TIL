@@ -2,13 +2,7 @@
 const inputBoxTag = document.getElementById("inputBox");
 
 function resetInputBox(){
-  inputBoxTag.value = "해야할 일을 입력해 주세요.";
-}
-
-function clearInputBox(){
-  if (inputBoxTag.value == "해야할 일을 입력해 주세요."){
-    inputBoxTag.value = null;
-  }
+  inputBoxTag.value = null;
 }
 
 function enterKey() {
@@ -21,24 +15,18 @@ function enterKey() {
 
 function addToDoList(newToDo) {
   const toDoListTableTag = document.getElementById("toDoListTable");
-  const newRow = toDoListTableTag.insertRow(1);
-  const newCell1 = newRow.insertCell(0);
-  const newCell2 = newRow.insertCell(1);
+  let newRow = toDoListTableTag.insertRow(1);
+  let newCell1 = newRow.insertCell(0);
 
   newCell1.innerHTML = '<input type="checkbox" />';
-  newCell1.innerHTML += ('<text>' + newToDo + '</text>');
-  newCell2.innerHTML = '<input type="button" value="수정"><input type="button" value="저장">';
+  newCell1.innerHTML += ('<input type="text" class="toDo" value="' + newToDo + '" readOnly="true"  />');
+  newCell1.innerHTML += '<input type="button" class="edit" onclick="editToDo(this)" value="수정">';
+  newCell1.innerHTML += '<input type="button" class="save" onclick="saveToDo(this)" value="저장">';
 }
 
-inputBoxTag.addEventListener('click', clearInputBox);
-inputBoxTag.addEventListener('keypress', clearInputBox);
 inputBoxTag.addEventListener('keypress', enterKey);
 
-// 버튼 핸들러 등록
-const selectAllTag = document.getElementById("selectAll");
-const releaseAllTag = document.getElementById("releaseAll");
-const deleteSelectionTag = document.getElementById("deleteSelection");
-
+// 하단 버튼 핸들러 등록
 function selectAllCheckBox() {
   const allCheckBox = document.querySelectorAll("input[type=checkbox]");
   allCheckBox.forEach((checkBox)=>{
@@ -57,11 +45,19 @@ function deleteSelectedList() {
   const allCheckBox = document.querySelectorAll("input[type=checkbox]");
   allCheckBox.forEach((checkBox)=>{
     if (checkBox.checked == true){
-      checkBox.parentElement.parentElement.remove();
+      // <tr> - <td> - <input type="checkbox">
+      checkBox.parentNode.parentNode.remove();
     }
   })
 }
 
-selectAllTag.addEventListener('click', selectAllCheckBox);
-releaseAllTag.addEventListener('click', releaseAllCheckBox);
-deleteSelectionTag.addEventListener('click', deleteSelectedList);
+// 각 행의 수정, 삭제 핸들러 등록
+function editToDo(editBox){
+  toDoText = editBox.previousElementSibling;
+  toDoText.readOnly = false;
+}
+
+function saveToDo(saveBox){
+  toDoText = saveBox.previousElementSibling.previousElementSibling;
+  toDoText.readOnly = true;
+}
