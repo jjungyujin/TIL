@@ -65,7 +65,7 @@ console.log(myTags[1]);
 ### css 선택자로 태그 선택하기
 css Selector 문법 적용 : `.클래스 이름` 또는 `#id`  
 최초 발견된 태그만 불러오려면 `document.querySelector`  
-해당 태그 모두 불러오려면 `document.querySelectorAll`
+해당 태그 모두 불러오려면 `document.querySelectorAll` : 유사 배열(리스트) 형태로 반환
 ```
 document.querySelector('css 선택자');
 
@@ -109,22 +109,22 @@ DOM 트리 내의 객체 : `Node`
 > `document - html - head, body`  
 
 ### DOM 트리 여행하기
-> (html 코드)[]
+> [참고 html 코드](https://github.com/jjungyujin/TIL/blob/main/JavaScript/codeit_02.html)
 ```
-const myTag = document.querySelector('#list-1');
-console.log(myTag);
+const firstTag = document.querySelector('#list-1');
+console.log(firstTag);
 
 // 형제 요소 노드
-console.log(myTag.previousElementSibling);
-console.log(myTag.nextElementSibling);
+console.log(firstTag.previousElementSibling);
+console.log(firstTag.nextElementSibling);
 
 // 부모 요소 노드
-console.log(myTag.parentElement);
+console.log(firstTag.parentElement);
 
 // 자식 요소 노드
-console.log(myTag.children[1]);
-console.log(myTag.firstElementChild);
-console.log(myTag.lastElementChild);
+console.log(firstTag.children[1]);
+console.log(firstTag.firstElementChild);
+console.log(firstTag.lastElementChild);
 ```
 
 ### 요소 노드 주요 프로퍼티
@@ -133,8 +133,8 @@ console.log(myTag.lastElementChild);
 태그들 사이의 들여쓰기와 줄바꿈 포함  
 요소 안의 html을 수정/추가할 때 사용
 ```
-console.log(myTag.innerHTML);
-myTag.innerHTML += '<li>Exotic</li>';
+console.log(firstTag.innerHTML);
+firstTag.innerHTML += '<li>Exotic</li>';
 ```
 
 2. outerHTML
@@ -144,25 +144,37 @@ myTag.innerHTML += '<li>Exotic</li>';
 3. textContent
 요소 안의 내용 중 html 태그 부분을 제외한 부분 리턴  
 ```
-myTag.textContent = 'new text';
+firstTag.textContent = 'new text';
 ```
 
 ### 요소 노드 추가하기
 1. 요소 노드 만들기
 ```
-const first = document.createElement('li');
+const newNode = document.createElement('요소 이름');
 ```
 
 2. 요소 노드 꾸미기
 ```
-first.textContent = '처음';
+newNode.textContent = '추가할 텍스트';
 ```
 
 3. 요소 노드 추가하기
 ```
 // 자식 노드로 추가 : Node.prepend, append
 // 형제 노드로 추가 : Node.before, after
-tomorrow.prepend(first);
+기존 노드.prepend(newNode);
+```
+
+### 노드 삭제와 이동하기
+```
+const firstTag = document.querySelector('#list-1');
+const secondTag = document.querySelector('#list-2');
+
+// 노드 삭제하기: Node.remove()
+firstTag.children[2].remove();
+
+// 노드 이동하기: prepend, append, before, after
+firstTag.children[2].after(secondTag.children[1]);
 ```
 
 ## 03. 이벤트 살펴보기
