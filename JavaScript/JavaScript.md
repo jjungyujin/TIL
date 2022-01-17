@@ -132,7 +132,7 @@ console.log(firstTag.lastElementChild);
 ```
 
 ### 요소 노드 주요 프로퍼티
-1. innerHTML
+1. innerHTML  
 요소 안의 html을 문자열로 리턴  
 태그들 사이의 들여쓰기와 줄바꿈 포함  
 요소 안의 html을 수정/추가할 때 사용
@@ -141,11 +141,11 @@ console.log(firstTag.innerHTML);
 firstTag.innerHTML += '<li>Exotic</li>';
 ```
 
-2. outerHTML
+2. outerHTML  
 해당 요소를 포함한 전체의 html 코드를 리턴  
 단, 요소에 새로운 html 요소를 할당하면 기존의 html 요소는 완전히 사라짐
 
-3. textContent
+3. textContent  
 요소 안의 내용 중 html 태그 부분을 제외한 부분 리턴  
 ```
 firstTag.textContent = 'new text';
