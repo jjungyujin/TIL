@@ -42,7 +42,7 @@ p i {
 }
 </style>
 ```
-동일한 태그명이 여러번 쓰인 경우 해당 태그가 속한 바깥 태그명을 같이 명시해주면 구분 가능 (```p i``` / ```h2 i```)  
+동일한 태그명이 여러번 쓰인 경우 해당 태그가 속한 바깥 태그명을 같이 명시해주면 구분 가능 (`p i` / `h2 i`)  
 > style 태그를 HTML 문장 안에 넣어도 됨
 ```
 <h1 style="font-size: 64px; text-align: center;"> My first Page </h1>
@@ -53,18 +53,20 @@ p i {
 ```
 
 ## CSS 기본 속성
-- **폰트 크기**  
-```font-size: 72px;```  
+- 폰트 크기  
+`font-size: 72px;`  
 
-- **텍스트 정렬**  
-```text-align: (right / left / center);```
+- 텍스트 정렬  
+`text-align: (right / left / center);`
 
-- **텍스트 색**  
-```color: lime;```  
+- 텍스트 색  
+`color: lime;`  
 
-- **여백**  
-```margin-bottom: 80px;```  
-```margin-left: 50px;```
+- 여백  
+`margin-bottom: 80px;`  
+`margin-left: 50px;`  
+여백으로 가운데 정렬 : `margin-left: auto;`, `margin-right: auto;`  
+태두리 여백 : `padding: 50px`
 
 ## CSS 태그
 1. ```<html>```  
@@ -76,8 +78,8 @@ title, meta, css, js 코드를 감싸주는 태그
 > [codeit_practice_file](https://github.com/jjungyujin/TIL/blob/main/CSS/codeit_pracitce.html)
 
 # 📎 02. 텍스트 스타일링
-## 내 CSS 스타일 만들기
-**CSS파일**
+## 내 CSS 스타일 만들기 - 클래스
+CSS파일
 ```
 .mystyle{
     font-size: 3em;
@@ -86,7 +88,7 @@ title, meta, css, js 코드를 감싸주는 태그
 }
 ```
 
-**HTML 파일**
+HTML 파일
 ```
 <title class="mystyle"> My first Website </title>
 ```

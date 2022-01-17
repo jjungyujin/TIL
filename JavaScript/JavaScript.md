@@ -80,10 +80,13 @@ console.log(myTags);
 버튼의 클릭 이벤트에 원하는 동작 실행 시키기 : 이벤트 핸들링  
 구체적인 동작을 구현한 함수 : 이벤트 핸들러(이벤트 리스너)
 ```
-const btn = document.querySelector('#myBtn');
-btn.onclick = function() {
+// js 코드 (이벤트 핸들러)
+function greeting() {
   console.log('Hello Codeit!');
 }
+
+// html 코드
+<input type="button" onclick="greeting">
 ```
 
 ## 02. 브라우저와 자바스크립스
@@ -109,6 +112,7 @@ DOM 트리 내의 객체 : `Node`
 > `document - html - head, body`  
 
 ### DOM 트리 여행하기
+현재 노드(객체)에서 다른 객체로 접근할 때 사용
 > [참고 html 코드](https://github.com/jjungyujin/TIL/blob/main/JavaScript/codeit_02.html)
 ```
 const firstTag = document.querySelector('#list-1');
@@ -179,6 +183,8 @@ firstTag.children[2].after(secondTag.children[1]);
 
 ## 03. 이벤트 살펴보기
 ### 하나의 이벤트에 여러 개의 독립적인 핸들러 등록하기
+addEventListener로 핸들러 등록하기 (권장)  
+두 번째 파라미터로 함수를 전달할 때 함수를 호출하지 않도록 주의
 ```
 let btn = document.querySelector('#myBtn');
 
@@ -196,4 +202,12 @@ btn.addEventListener('click', event2);
 > 핸들러 제거하기
 ```
 btn.removeEventListener('click', event2);
+```
+
+### 매개변수를 받는 핸들러 등록하기
+html 태그 안에 함수 등록할 때 ( ) 안에 전달할 파라미터 넣어주기  
+`this` : 해당 태그 객체를 전달
+```
+// html 코드
+<input type="button" class="edit" onclick="editToDo(this)" value="수정">
 ```
