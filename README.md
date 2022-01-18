@@ -10,6 +10,7 @@
 
 ### 📎 HTML
 - [HTML Basic](https://github.com/jjungyujin/TIL/blob/main/HTML/HTML_Basic.md)
+- [HTML Key Point](https://github.com/jjungyujin/TIL/blob/main/HTML/HTML_KeyPoint.md)
 
 ### 📎 CSS
 - [CSS](https://github.com/jjungyujin/TIL/blob/main/CSS/CSS.md)
