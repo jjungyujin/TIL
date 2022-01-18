@@ -13,7 +13,8 @@
 - [HTML Key Point](https://github.com/jjungyujin/TIL/blob/main/HTML/HTML_KeyPoint.md)
 
 ### 📎 CSS
-- [CSS](https://github.com/jjungyujin/TIL/blob/main/CSS/CSS.md)
+- [CSS Basic](https://github.com/jjungyujin/TIL/blob/main/CSS/CSS_Basic.md)
+- [CSS Key Point](https://github.com/jjungyujin/TIL/blob/main/CSS/CSS_KeyPoint.md)
 
 ### 📎 Crawling
 - [Crawling](https://github.com/jjungyujin/TIL/blob/main/crawling/crawling.md)
