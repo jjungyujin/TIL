@@ -101,7 +101,7 @@ width, height를 설정하지 않으면 기존 크기대로 설정됨
 
 ## div 태그
 여러 요소를 묶어주는 태그  
-css 스타일링할 때 유용하게 쓰임
+태그 안의 요소를 단독적인 단락으로 넣음
 ```
 <div>
   <h1> </h1>
@@ -110,6 +110,10 @@ css 스타일링할 때 유용하게 쓰임
   </p>
 </div>
 ```
+
+## span 태그
+하나의 단락 내에서 특정 부분을 묶어주는 태그  
+div와는 다르게 단독적인 단락으로 나누지 않음
 
 ## css 파일, js 파일 따로 쓰기
 `.css`와 `.js` 파일을 따로 생성하고 html 파일에 연결
@@ -138,6 +142,8 @@ td input[type=checkbox] {
 // selectAllCheckBox는 js파일에 정의된 함수
 <input id="selectAll" type="button" onclick="selectAllCheckBox()">
 ```
+html 파일을 실행하여 브라우저를 열기 - css 적용 확인  
+개발자 도구로 html 코드 변화 확인 - js 기능 구현 확인
 
 # 📎 03. 꿀팁
 ## 코멘트
