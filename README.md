@@ -9,7 +9,7 @@
 - [VScode Extension](https://github.com/jjungyujin/TIL/blob/main/VS_code/VScode_Extension.md)
 
 ### 📎 HTML
-- [HTML](https://github.com/jjungyujin/TIL/blob/main/HTML/HTML.md)
+- [HTML Basic](https://github.com/jjungyujin/TIL/blob/main/HTML/HTML_Basic.md)
 
 ### 📎 CSS
 - [CSS](https://github.com/jjungyujin/TIL/blob/main/CSS/CSS.md)
