@@ -77,7 +77,7 @@ margin으로 가운데 정렬
 ## 배경이미지 넣기
 ```
 .div {
-  background-image: url("이미지 파일명(상대경로 포함)");
+  background-image: url("이미지파일명(상대경로 포함)");
   // cover : 사진의 비율을 유지, 박스를 꽉 채움
   background-size: cover;
   // position : 배경이미지의 위치(기준점) 설정
@@ -142,3 +142,29 @@ color, font-family, font-size, list-style, text-align
 
 위 속성들이 항상 상속되는 건 아님  
 > 상속되지 않는 태그 : a
+
+# 📎 03. Display
+## Display 속성
+각 요소마다 display 값이 정해져 있지만 css 코드로 변경 가능  
+> `inline-block` 으로 변경하기
+```
+i {
+  display: inline-block;
+  width: 200px;
+}
+```
+
+## 가운데 정렬
+> inline 또는 inline-block 요소
+```
+.container {
+  text-align: center;
+}
+```
+> block 요소
+```
+.block-element {
+  margin-left: auto;
+  margin-right: auto;
+}
+```
