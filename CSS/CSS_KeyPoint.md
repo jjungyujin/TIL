@@ -168,3 +168,91 @@ i {
   margin-right: auto;
 }
 ```
+
+# 📎 04. Positioning
+## relative position
+- static : 원래 있어야 할 위치 (`position`의 기본값)  
+- relative : 원래 있어야 할 위치를 기준으로 위치 설정
+
+```
+// css 코드
+b {
+  position: relative;
+  // 원래 위치에서 top, left에 간격 두기
+  top : 30px;
+  left: 30px;
+}
+```
+> relative에서의 간격과 margin의 차이점  
+
+원래 위치의 공간은 비어지고 설정한 위치에 요소가 나타남  
+다른 요소들이 간격의 영향을 받지 않아서 겹치는 레이아웃이 가능함
+
+## fixed position
+브라우저를 기준으로 위치 설정
+```
+// css 코드
+b {
+  position: fixed;
+  // 브라우저에서 top, left에 간격 두기
+  top : 30px;
+  left: 30px;
+}
+```
+
+## absolute position
+가장 가까운 포지셔닝이 된 조상 요소를 기준으로 위치 설정
+> 포지셔닝이 된 요소  
+static(기본)을 제외한 relative, fixed, absolute position을 의미
+
+# 📎 05. Float
+## float
+요소를 공중에 띄워서 원래 차지하던 공간을 빈공간으로 만들기  
+아래 있던 요소가 빈공간을 채우게 되면서 겹쳐보일 수 있음  
+단, inline이나 inline-block 요소는 원래 있던 요소의 공간에 들어갈 수 없음
+
+![float](CSS_float.png)
+
+사용 목적
+> 기사나 신문처럼 그림이 글자 사이에 둘러싸이는 레이아웃 표현  
+사진과 글자 사이에 여유를 두려면 그림에 여백 두기
+
+## multiple float
+여러 요소를 float할 때 먼저 float된 요소와 충돌하는 경우 그 자리에서 멈춤  
+더 이상 같은 줄에 float할 공간이 없으면 밑에 줄로 아동  
+브라우저의 가로 길이에 따라 레이아웃이 달라질 수 있음
+
+![multiple float](CSS_multiple_float.png)
+
+사용 목적
+> 그리드(Grid) 레이아웃
+
+## clear
+`float`와 함께 쓰이는 속성  
+float에서의 줄바꿈 역할  
+```
+#div1 {
+  float: right;
+}
+#div2 {
+  float: right;
+  // 오른쪽에 아무런 요소가 없도록 함
+  // div1 밑에 줄 오른쪽으로 배치
+  clear: right;
+}
+```
+사용 목적
+> 어떤 `div` 내의 요소를 모두 공중에 띄우면 해당 `div`의 `height`를 0으로 받아들임  
+> 브라우저 `width`를 조절함에 따라 배치가 불규칙해짐 (ex. 밑에 텍스트 요소를 추가한 경우)
+```
+// html
+<div class="clearfix"></div>
+
+// css
+.clearfix {
+  clear: left;
+}
+```
+> `.clearfix`가 그리드 레이아웃이 끝나는 하단에 위치하게 됨  
+> `.clearfix`를 포함하기 위해 `div`의 `hieght`가 설정됨  
+> 브라우저의 width를 조절해도 원하는 대로 레이아웃이 유지됨
