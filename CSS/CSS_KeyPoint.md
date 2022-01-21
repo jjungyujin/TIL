@@ -229,7 +229,7 @@ static(기본)을 제외한 relative, fixed, absolute position을 의미
 
 ## clear
 `float`와 함께 쓰이는 속성  
-float에서의 줄바꿈 역할  
+`float`에서의 줄바꿈 역할  
 ```
 #div1 {
   float: right;
@@ -253,6 +253,6 @@ float에서의 줄바꿈 역할
   clear: left;
 }
 ```
-> `.clearfix`가 그리드 레이아웃이 끝나는 하단에 위치하게 됨  
+> 위 코드를 추가하면 `.clearfix`가 그리드 레이아웃이 끝나는 하단에 위치하게 됨  
 > `.clearfix`를 포함하기 위해 `div`의 `hieght`가 설정됨  
 > 브라우저의 width를 조절해도 원하는 대로 레이아웃이 유지됨
