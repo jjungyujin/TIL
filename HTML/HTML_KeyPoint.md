@@ -70,3 +70,31 @@ inline 요소들은 각 박스의 baseline들이 맞춰져 정렬됨
 ## vertical-align
 기본값 : baseline  
 그 외 : top, middle, bottom
+
+# 📎 03. List
+## list 태그
+1. `<ol>`  
+순서가 있는 리스트 (Ordered List)   
+순서대로 `<li>` (list item)에 번호를 부여해서 출력함
+```
+<ol>
+  <li>집 청소</li>            // 1. 집 청소
+  <li>영어 단어 외우기</li>     // 2. 영어 단어 외우기
+</ol>
+```
+> type 속성
+```
+<ol type="a">
+  <li>집 청소</li>            // a. 집 청소
+  <li>영어 단어 외우기</li>     // b. 영어 단어 외우기
+</ol>
+
+<ol type="i">
+  <li>집 청소</li>            // i. 집 청소
+  <li>영어 단어 외우기</li>     // ii. 영어 단어 외우기
+```
+
+2. `<ul>`  
+순서가 없는 리스트 (Unordered List)  
+`<li>` 앞에 번호 대신 동그라미가 붙음  
+`display: list-item;`으로 설정되어 있음 ([css로 리스트 스타일링 - 06](https://github.com/jjungyujin/TIL/blob/main/CSS/CSS_KeyPoint.md))
