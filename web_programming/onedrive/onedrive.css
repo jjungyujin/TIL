@@ -336,7 +336,6 @@ body {
 #mainBoxList {
   padding: 20px 32px 0px 32px;
   color: rgb(50, 49, 48);
-  height: 146px;
 }
 
 #listTop {
@@ -354,6 +353,12 @@ body {
 .fileCheck {
   width: 48px;
   display: inline-block;
+  text-align: center;
+}
+
+.checkBox {
+  width: 18px;
+  height: 42px;
 }
 
 .fileIconBox {
