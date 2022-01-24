@@ -1,0 +1,472 @@
+body {
+  font-family: 'Malgun Gothic',Gulim,-apple-system,BlinkMacSystemFont,Roboto,'Helvetica Neue',sans-serif;
+}
+
+.basePage {
+  position: absolute;
+  left: 0px; right: 0px; top: 0px; bottom: 0px;
+  min-width: 319px;
+}
+
+.pageHeader {
+  background-color: rgb(0, 120, 212);
+  height: 48px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.pageHeader div {
+  display: inline-block;
+  height: 48px;
+  vertical-align: top;
+}
+
+#dotsMenu {
+  box-sizing: border-box;
+  width: 48px; height: 48px;
+  min-width: 48px;
+  fill:rgb(255, 255, 255);
+  padding: 14px;
+}
+
+#headerCenter {
+  box-sizing: border-box;
+  width: calc(100% - 96px);
+  height: 48px;
+}
+
+#headerText {
+  width: 90.23px; height: 48px;
+  padding: 0px 12px 0px 8px;
+  color: rgb(255, 255, 255);
+  font-size: 16px; font-weight: 600;
+  line-height: 48px;
+  position: absolute;
+  left: 48px;
+}
+
+.searchBar {
+  display: inline-block;
+  padding: 8px 0px;
+  box-sizing: border-box;
+  height: 48px;
+}
+
+#searchIconBox {
+  box-sizing: border-box;
+  width: 44px;
+  height: 32px;
+  background-color: #e1dfdd;
+  display: inline-block;
+  padding: 0px 8px 0px 12px;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+  border-color: rgb(37, 36, 35);
+}
+
+#searchIcon {
+  box-sizing: border-box;
+  margin-top: 8px;
+  height: 16px; width: 16px;
+  fill: rgb(0, 120, 212);
+}
+
+#searchBox {
+  height: 32px; width: 424px;
+  padding: 0px; border: 0px; margin: 0px;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  border-color: rgb(37, 36, 35);
+  border-left: 0px;
+  font-size: 14px;
+  font-weight: 400px;
+  background-color: #e1dfdd;
+}
+
+.centerIcons {
+  position: absolute;
+  right: 48px;
+}
+
+.centerIcons div{
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+}
+
+.centerIcons svg{
+  display: inline-block;
+  width: 20px;
+  height: 48px;
+  fill: rgb(255, 255, 255);
+}
+
+#userIcon {
+  box-sizing: border-box;
+  width: 48px; height: 48px;
+  min-width: 48px;
+  fill:rgb(255, 255, 255);
+  padding: 10px;
+}
+
+.pageBox {
+  position: absolute;
+  left: 0px; right: 0px; top: 48px; bottom: 0px;
+  color: rgb(50, 49, 48);
+}
+
+/* 왼쪽 공간 */
+#leftPane {
+  box-sizing: border-box;
+  height: 100%;
+  width: 228px;
+  background-color: rgb(243, 242, 241);
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  float: left;
+}
+
+#selection {
+  width: 100%;
+}
+
+#userName {
+  width: 196px;
+  height: 44px;
+  padding: 0px 16px;
+  text-align: left;
+  color: rgb(50, 49, 48);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 44px;
+}
+
+.selectionElement {
+  width: 196px;
+  height: 36px;
+  padding: 0px 16px;
+}
+
+.selectionElement svg {
+  width: 16px;
+  height: 16px;
+  margin-right: 16px;
+  fill: rgb(96, 94, 92);
+  vertical-align: text-bottom;
+}
+
+.selectionElement span {
+  line-height: 36px;
+  font-size: 14px;
+  color: rgb(50, 49, 48);
+}
+
+#notification {
+  display: inline-block;
+  width: 228px;
+  height: 202px;
+}
+
+#upSellBanner {
+  display: inline-block;
+  height: 97px;
+  width: 196px;
+  margin: 8px 16px 12px 16px;
+}
+
+.bannerText {
+  color: rgb(96, 94, 92);
+  font-size: 12px;
+  padding-right: 4px;
+  width: 196px;
+}
+
+.bannerLinkText {
+  color: rgb(0, 120, 212);
+  font-size: 12px;
+  padding-right: 4px;
+  margin-top: 3px;
+}
+
+#midMargin {
+  display: inline-block;
+  height: 12px;
+  width: 100%;
+}
+
+#upSellButton {
+  display: inline-block;
+  width: 170px;
+  height: 17px;
+  padding: 6px 12px;
+  border: 1px solid rgb(0, 120, 212);
+  border-radius: 2px;
+  color: rgb(0, 120, 212);
+  text-align: center;
+}
+
+#bannerIcon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  fill: rgb(0, 120, 212);
+  padding-right: 8px;
+}
+
+#buttonText {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+#bottomMargin {
+  display: inline-block;
+  width: 100%;
+}
+
+/* 오른쪽 공간 */
+#rightPane {
+  box-sizing: border-box;
+  width: calc(100% - 228px);
+  height: 100%;
+  position: absolute;
+  right: 0px;
+}
+
+.menuBarBox {
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+  height: 45px;
+  padding: 0px 24px;
+  border-bottom: 1px solid rgb(237, 235, 233);
+  border-radius: 2px;
+}
+
+#menuBar {
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+  height: 44px;
+}
+
+#barLeft {
+  display: flex;
+  width: calc(100% - 172.294px);
+  height: 44px;
+}
+
+#barLeft div {
+  box-sizing: border-box;
+  padding: 0px 4px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.leftIcon {
+  align-items: center;
+  fill: rgb(0, 120, 212);
+  width: 16px;
+  height: 16px;
+}
+
+#barRight {
+  display: inline-flex;
+  align-items: center;
+}
+
+#barRight div {
+  box-sizing: border-box;
+  padding: 0px 4px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.rightIcon {
+  align-items: center;
+  fill: rgb(0, 120, 212);
+  width: 16px;
+  height: 16px;
+}
+
+.chevronDownIcon {
+  width: 10px;
+  height: 16px;
+  fill: rgb(96, 94, 92);
+  margin: 0px 4px;
+}
+
+#menuBar svg, #menuBar span {
+  margin: 0px 4px;
+  font-size: 14px;
+  color: rgb(50, 49, 48);
+  font-stretch: 100%;
+  line-height: 14px;
+}
+
+/* 오른쪽 메인 */
+#rightMain {
+  box-sizing: border-box;
+  width: 100%;
+  height: calc(100% - 45px);
+  padding-bottom: 100px;
+  position: absolute;
+  bottom: 0px;
+  display: block;
+  margin-top: 93px;
+}
+
+#mainBoxHeader {
+  box-sizing: border-box;
+  padding: 32px 32px 0px 32px;
+  height: 72px;
+  width: 1476px;
+}
+
+#mainBoxHeader span {
+  font-size: 20px;
+  font-weight: 600;
+  height: 36px;
+  line-height: 36px;
+  margin-bottom: 4px;
+}
+
+#mainBoxList {
+  padding: 20px 32px 0px 32px;
+  color: rgb(50, 49, 48);
+  height: 146px;
+}
+
+#listTop {
+  padding: 16px 0px 1px 0px;
+  border-bottom: 1px solid rgb(237, 235, 233);
+  height: 42px;
+  width: 1412px;
+  min-width: 100%;
+}
+
+#listTop div {
+  height: 42px;
+}
+
+.fileCheck {
+  width: 48px;
+  display: inline-block;
+}
+
+.fileIconBox {
+  box-sizing: border-box;
+  padding: 0px 8px 0px 12px;
+  width: 40px;
+  display: inline-block;
+}
+
+.fileIcon {
+  box-sizing: border-box;
+  width: 18px;
+  height: 42px;
+  fill: rgb(161, 159, 157);
+}
+
+.fileName {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 0px 8px 0px 12px;
+  width: 460px;
+  vertical-align: top;
+}
+
+#fileNameContainer {
+  text-align: left;
+  display: inline-flex;
+  flex-direction: row;
+}
+
+.listTopText {
+  height: 42px;
+  line-height: 42px;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+  vertical-align: top;
+}
+
+#arrowUp {
+  padding-left: 4px;
+  width: 12px;
+  height: 42px;
+}
+
+.listTopChevronDown {
+  width: 10px;
+  height: 42px;
+  fill: rgb(96, 94, 92);
+  margin: 0px 4px;
+}
+
+.fileDate, .fileShare, .fileSize {
+  box-sizing: border-box;
+  width: 150px;
+  padding: 0px 8px 0px 12px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.listRow {
+  border-bottom: 1px solid rgb(237, 235, 233);
+}
+
+#fileNameText {
+  height: 42px;
+  line-height: 42px;
+  display: inline-block;
+  font-size: 14px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.listText {
+  height: 42px;
+  line-height: 42px;
+  display: inline-block;
+  font-size: 12px;
+  text-align: left;
+  vertical-align: top;
+}
+
+#dropHint {
+  margin-top: 42px;
+  font-size: 14px;
+  text-align: center;
+  width: 1476px;
+  height: 17px;
+  color: rgb(96, 94, 92);
+}
+
+.headerButton:hover {
+  background-color: rgb(0, 77, 136);
+}
+
+#selectionList div:hover {
+  background-color: rgb(237, 235, 233);
+}
+
+#barLeft > div:hover {
+  background-color: rgb(237, 235, 233);
+}
+
+#barRight > div:hover {
+  background-color: rgb(237, 235, 233);
+}
+
+#listTop > div:hover {
+  background-color: rgb(237, 235, 233);
+}
+
+.listRow:hover {
+  background-color: rgb(237, 235, 233);
+}
+
