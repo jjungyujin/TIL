@@ -23,3 +23,5 @@ Object.defineProperty(대상 객체, 객체의 속성, {
 })
 ```
 [Reactivity 코드](https://github.com/jjungyujin/TIL/blob/main/vue_js/inflearn_playground/vue-way.html)
+
+## 02. 인스턴스
