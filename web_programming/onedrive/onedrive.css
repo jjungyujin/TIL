@@ -322,7 +322,7 @@ body {
   box-sizing: border-box;
   padding: 32px 32px 0px 32px;
   height: 72px;
-  width: 1476px;
+  width: calc(100% - 228px);
 }
 
 #mainBoxHeader span {
@@ -342,7 +342,6 @@ body {
   padding: 16px 0px 1px 0px;
   border-bottom: 1px solid rgb(237, 235, 233);
   height: 42px;
-  width: 1412px;
   min-width: 100%;
 }
 
@@ -446,7 +445,7 @@ body {
   margin-top: 42px;
   font-size: 14px;
   text-align: center;
-  width: 1476px;
+  width: 100%;
   height: 17px;
   color: rgb(96, 94, 92);
 }
