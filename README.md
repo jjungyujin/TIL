@@ -20,7 +20,7 @@
 - [crawling](https://github.com/jjungyujin/TIL/blob/main/crawling/crawling.md)
 
 ### 📎 javaScript
-- [javaScript](https://github.com/jjungyujin/TIL/blob/main/javaScript/javaScript.md)
+- [javaScript](https://github.com/jjungyujin/TIL/blob/main/JavaScript/JavaScript.md)
 
 ### 📎 Web Programming
 - [Web Programming](https://github.com/jjungyujin/TIL/blob/main/webProgramming/README.md)
