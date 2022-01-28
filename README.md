@@ -17,7 +17,7 @@
 - [CSS 핵심 개념](https://github.com/jjungyujin/TIL/blob/main/CSS/CSS_KeyPoint.md)
 
 ### 📎 crawling
-- [Crawling](https://github.com/jjungyujin/TIL/blob/main/crawling/crawling.md)
+- [crawling](https://github.com/jjungyujin/TIL/blob/main/crawling/crawling.md)
 
 ### 📎 javaScript
 - [javaScript](https://github.com/jjungyujin/TIL/blob/main/javaScript/javaScript.md)
