@@ -2,25 +2,28 @@
 > 하루동안 학습하고 경험한 내용을 기록
 
 ## 목차
-### 📎 Git Summary
--  [Git 기초](https://github.com/jjungyujin/TIL/blob/main/Git_Summary/Git_Summary.md)
+### 📎 git & gitHub
+-  [git 기초](https://github.com/jjungyujin/TIL/blob/main/gitHub/git_Basic.md)
 
 ### 📎 VS Code
 - [VScode Extension](https://github.com/jjungyujin/TIL/blob/main/VS_code/VScode_Extension.md)
 
 ### 📎 HTML
-- [HTML Basic](https://github.com/jjungyujin/TIL/blob/main/HTML/HTML_Basic.md)
-- [HTML Key Point](https://github.com/jjungyujin/TIL/blob/main/HTML/HTML_KeyPoint.md)
+- [HTML 기초](https://github.com/jjungyujin/TIL/blob/main/HTML/HTML_Basic.md)
+- [HTML 핵심 개념](https://github.com/jjungyujin/TIL/blob/main/HTML/HTML_KeyPoint.md)
 
 ### 📎 CSS
-- [CSS Basic](https://github.com/jjungyujin/TIL/blob/main/CSS/CSS_Basic.md)
-- [CSS Key Point](https://github.com/jjungyujin/TIL/blob/main/CSS/CSS_KeyPoint.md)
+- [CSS 기초](https://github.com/jjungyujin/TIL/blob/main/CSS/CSS_Basic.md)
+- [CSS 핵심 개념](https://github.com/jjungyujin/TIL/blob/main/CSS/CSS_KeyPoint.md)
 
-### 📎 Crawling
+### 📎 crawling
 - [Crawling](https://github.com/jjungyujin/TIL/blob/main/crawling/crawling.md)
 
-### 📎 JavaScript
-- [JavaScript](https://github.com/jjungyujin/TIL/blob/main/JavaScript/JavaScript.md)
+### 📎 javaScript
+- [javaScript](https://github.com/jjungyujin/TIL/blob/main/javaScript/javaScript.md)
 
 ### 📎 Web Programming
-- [Web Programming](https://github.com/jjungyujin/TIL/blob/main/web_programming/README.md)
+- [Web Programming](https://github.com/jjungyujin/TIL/blob/main/webProgramming/README.md)
+
+### 📎 Vue.js
+- [Vue.js](https://github.com/jjungyujin/TIL/blob/main/vue_js/README.md)
