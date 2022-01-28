@@ -6,7 +6,7 @@
 -  [git 기초](https://github.com/jjungyujin/TIL/blob/main/gitHub/git_Basic.md)
 
 ### 📎 VS Code
-- [VScode Extension](https://github.com/jjungyujin/TIL/blob/main/VS_code/VScode_Extension.md)
+- [VScode Extension](https://github.com/jjungyujin/TIL/blob/main/vs_code/VScode_Extension.md)
 
 ### 📎 HTML
 - [HTML 기초](https://github.com/jjungyujin/TIL/blob/main/HTML/HTML_Basic.md)
