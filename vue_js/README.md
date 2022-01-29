@@ -107,3 +107,13 @@ Vue.component('컴포넌트 이름', {컴포넌트 내용});
 
 ### event emit
 📎 [event emit 코드](https://github.com/jjungyujin/TIL/blob/main/vue_js/inflearn_playground/event-emit.html) 
+
+## 05. 컴포넌트 통신 방법 - 응용
+### 같은 컴포넌트 레벨 간의 통신 방법
+상위 컴포넌트 Root
+- 하위 컴포넌트 1. AppHeader
+- 하위 컴포넌트 2. AppContent  
+
+하위 컴포넌트에서 상위 컴포넌트로 데이터를 전달하고,  
+다른 하위 컴포넌트가 상위 컴포넌트에서 props로 가져옴  
+📎 [같은 레벨의 컴포넌트 통신 코드](https://github.com/jjungyujin/TIL/blob/main/vue_js/inflearn_playground/component-same-level.html) 
