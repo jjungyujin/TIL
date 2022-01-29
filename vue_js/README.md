@@ -93,3 +93,17 @@ Vue.component('컴포넌트 이름', {컴포넌트 내용});
 
 ### 컴포넌트와 인스턴스와의 관계
 지역 컴포넌트는 자신이 속한 인스턴스에서만 사용 가능
+
+## 04. 컴포넌트 통신 방법 - 기본
+### 컴포넌트 통신 규칙
+- props 속성 : 상위에서 하위로는 데이터를 내려줌  
+- 이벤트 발생 : 하위에서 상위로는 이벤트를 올려줌
+
+### props 속성
+📎 [props 속성 코드](https://github.com/jjungyujin/TIL/blob/main/vue_js/inflearn_playground/props.html) 
+
+### props 속성의 특징
+상의 컴포넌트에서 data의 값이 바뀌면 props로 가져온 하위 컴포넌트의 값도 바뀜
+
+### event emit
+📎 [event emit 코드](https://github.com/jjungyujin/TIL/blob/main/vue_js/inflearn_playground/event-emit.html) 
