@@ -116,4 +116,59 @@ Vue.component('컴포넌트 이름', {컴포넌트 내용});
 
 하위 컴포넌트에서 상위 컴포넌트로 데이터를 전달하고,  
 다른 하위 컴포넌트가 상위 컴포넌트에서 props로 가져옴  
-📎 [같은 레벨의 컴포넌트 통신 코드](https://github.com/jjungyujin/TIL/blob/main/vue_js/inflearn_playground/component-same-level.html) 
+📎 [같은 레벨의 컴포넌트 통신 코드](https://github.com/jjungyujin/TIL/blob/main/vue_js/inflearn_playground/component-same-level.html)
+
+## 06. 라우터
+### 뷰 라우터 소개와 설치
+뷰 라우터 : 뷰 라이브러리를 이용하여 페이지 이동을 구현할 때 사용하는 라이브러리
+> CDN 방식 설치 : vue.js 불러오는 코드 아래에 router 추가 (순서 유의)
+```
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+```
+
+### 뷰 라우터 등록 및 인스턴스 연결
+라우터 인스턴스 생성
+```
+var router = new VueRouter({
+  // 라우터 옵션
+})
+```
+인스턴스 연결
+```
+new Vue({
+      el: '#app',
+      // 인스턴스의 router 속성에 연결할 VueRouter 지정
+      router: router
+    });
+```
+
+### routes 속성
+routes : 페이지의 라우팅 정보를 배열로 담고 있음  
+> 라우팅 정보 : 어떤 url로 이동했을 때 뿌려질 페이지의 정보
+> 페이지의 갯수 만큼 배열 안에 객체가 필요함
+```
+var router = new VueRouter({
+      routes: [
+        // 객체 1. 로그인 페이지 정보
+        {
+          // 페이지의 url
+          path: '/login',
+          // 해당 url에서 표시될 컴포넌트
+          // 각 페이지마다 뿌려질 컴포넌트는 무조건 1개
+          component: LoginComponent
+        },
+        // 객체 2. 메인 페이지 정보
+        {
+          path: '/main',
+          component: MainComponent
+        }
+      ]
+    });
+```
+
+### router-view 태그와 router-link 태그
+- router-view : url에 따른 컴포넌트가 뿌려질 영역  
+- router-link : 사용자가 url 입력 없이 페이지를 이동할 수 있도록 하기 위한 링크 태그
+
+📎 [라우터 정리 코드](https://github.com/jjungyujin/TIL/blob/main/vue_js/inflearn_playground/router.html)
