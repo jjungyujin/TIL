@@ -172,3 +172,19 @@ var router = new VueRouter({
 - router-link : 사용자가 url 입력 없이 페이지를 이동할 수 있도록 하기 위한 링크 태그
 
 📎 [라우터 정리 코드](https://github.com/jjungyujin/TIL/blob/main/vue_js/inflearn_playground/router.html)
+
+## 07. HTTP 통신 라이브러리 - axios
+### axios 소개 및 설치
+axios : 뷰에서 권고하는 HTTP 통신 라이브러리  
+
+> cdn식 axios 설치
+```
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+```
+
+### 웹 서비스에서 클라이언트와 서버의 HTTP 통신 구조
+브라우저 👉🏻 서버 : HTTP 요청 (axios)  
+서버 👉🏻 DB : 데이터 접근 (Spring, Node.js, Django)  
+서버 👉🏻 브라우저 : HTTP 응답
+
+📎 [axios 예시 코드](https://github.com/jjungyujin/TIL/blob/main/vue_js/inflearn_playground/axios.html)
