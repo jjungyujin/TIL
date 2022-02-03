@@ -19,8 +19,8 @@
 ### 📎 crawling
 - [crawling](https://github.com/jjungyujin/TIL/blob/main/crawling/crawling.md)
 
-### 📎 javaScript
-- [javaScript](https://github.com/jjungyujin/TIL/blob/main/JavaScript/JavaScript.md)
+### 📎 JavaScript
+- [JavaScript](https://github.com/jjungyujin/TIL/blob/main/JavaScript/JavaScript.md)
 
 ### 📎 Web Programming
 - [Web Programming](https://github.com/jjungyujin/TIL/blob/main/webProgramming/README.md)
@@ -30,3 +30,6 @@
 
 ### 📎 Node.js
 - [Node.js](https://github.com/jjungyujin/TIL/blob/main/node_js/README.md)
+
+### 📎 SQL database
+- [MySQL](https://github.com/jjungyujin/TIL/blob/main/MySQL/README.md)
