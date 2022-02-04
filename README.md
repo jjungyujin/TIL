@@ -33,3 +33,4 @@
 
 ### 📎 SQL database
 - [MySQL](https://github.com/jjungyujin/TIL/blob/main/MySQL/README.md)
+- [ORM](https://github.com/jjungyujin/TIL/blob/main/ORM/README.md)
