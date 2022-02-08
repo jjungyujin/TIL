@@ -1,0 +1,26 @@
+<html>
+  <div id='app'>
+    Hello <span v-if="show"> Vue.js </span>
+  </div>
+  // 인스턴스의 속성 loading이 true인 경우
+  <div v-if="loading">
+    Loading
+  </div>
+  // 인스턴스의 속성 loading이 false인 경우
+  <div v-else>
+    test user has been logged in
+  </div>
+  <div v-show="show">
+    Loading
+  </div>
+</html>
+
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      show: false,
+      loading: true
+    }
+  })
+</script>

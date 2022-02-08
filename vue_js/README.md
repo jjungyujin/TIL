@@ -188,3 +188,91 @@ axios : 뷰에서 권고하는 HTTP 통신 라이브러리
 서버 👉🏻 브라우저 : HTTP 응답
 
 📎 [axios 예시 코드](https://github.com/jjungyujin/TIL/blob/main/vue_js/inflearn_playground/axios.html)
+
+## 08. 템플릿 문법 - 기본
+### 템플릿 문법 소개
+뷰의 템플릿 문법 : 뷰로 화면을 조작하는 방법
+
+- 데이터 바인딩  
+뷰 인스턴스에서 정의한 속성들을 화면에 표시하는 방법  
+가장 기본적인 방식은 콧수염 괄호
+
+- 디렉티브  
+뷰로 화면의 요소를 더 쉽게 조작하기 위한 문법  
+`v-`로 시작하는 속성을 뷰에서 인식
+
+### 데이터 바인딩과 computed 속성
+```
+<html>
+  <div> {{num}} </div>
+  <div> {{doubleNum}} </div>
+</html>
+
+<script>
+  new Vue({
+    data: {
+      num: 10
+    }
+    // 계산된 속성
+    computed: {
+      doubleNum: function() {
+        return this.num * 2;
+      }
+    }
+  })
+</script>
+```
+
+### 뷰 디렉티브와 v-bind
+id, class 앞에 `v-bind:`을 붙여주면 뷰에서 인식
+```
+<html>
+<div>
+  <p v-bind:id="myId" v-bind:class="text-class">{{text}}</p>
+</div>
+</html>
+
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      text: 'hello',
+      text-class: 'text-blue',
+      myId: 'yujin'
+    }
+  })
+</script>
+```
+
+### 클래스 바인딩, v-if, v-show
+조건문에 따라 화면 조작하기  
+> v-if와 v-show의 차이점  
+
+v-if는 상태에서 따라 해당 태그 자체가 사라짐  
+v-show는 화면에서 보이지 않아도 태그 자체가 사라지는 게 아니라 `display:none`으로 설정됨
+
+📎 [v-if, v-else 예시 코드](https://github.com/jjungyujin/TIL/blob/main/vue_js/inflearn_playground/v-if.html)
+
+### v-model
+`input` 박스에 입력된 값을 인스턴스 데이터에 넣어주기 위한 디렉티브
+```
+<html>
+<div id="app">
+  <input type="text" v-model="message">
+</div>
+</html>
+
+<script>
+new Vue({
+  el: '#app',
+  data: {
+    message: ""
+  }
+})
+</script>
+```
+
+### method 속성과 v-on 디렉티브를 이용한 키보드, 마우스 이벤트 처리 방법
+키보드와 마우스 이벤트를 method 등록으로 처리 가능  
+
+📎 [method 속성 예시 코드](https://github.com/jjungyujin/TIL/blob/main/vue_js/inflearn_playground/v-if.html)

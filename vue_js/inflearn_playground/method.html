@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <!-- 클릭 이벤트에 실행할 method 연결 -->
+    <button v-on:click="logText">click me</button>
+    <!-- 키보드 입력 중 enter 이벤트에서 실행할 method 연결 -->
+    <input type="text" v-on:keyup.enter="logText">
+    <button>add</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      methods: {
+        logText: function() {
+          console.log('clicked');
+        }
+      }
+    })
+  </script>
+</body>
+</html>
