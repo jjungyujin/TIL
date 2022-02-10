@@ -78,7 +78,7 @@ Vue.component('컴포넌트 이름', {컴포넌트 내용});
     components: {
       // '컴포넌트 이름', {컴포넌트 내용}
       'app-footer': {
-          emplate: '<footer>footer</footer>'
+          template: '<footer>footer</footer>'
       }
     }
   });
@@ -276,3 +276,8 @@ new Vue({
 키보드와 마우스 이벤트를 method 등록으로 처리 가능  
 
 📎 [method 속성 예시 코드](https://github.com/jjungyujin/TIL/blob/main/vue_js/inflearn_playground/v-if.html)
+
+## 09. 템플릿 문법 - 실전
+### watch 속성
+### watch 속성 vs computed 속성
+### computed 속성을 이용한 클래스 코드 작성 방법
