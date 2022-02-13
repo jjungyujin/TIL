@@ -1,5 +1,3 @@
-# Vue.js 
-
 ## 01. Vue.js 소개
 ### MVVM 모델에서의 Vue
 MVVM 패턴의 뷰모델(ViewModel) 레이어에 해당하는 화면(View)단 라이브러리  

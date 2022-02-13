@@ -26,7 +26,8 @@
 - [Web Programming](https://github.com/jjungyujin/TIL/blob/main/webProgramming/README.md)
 
 ### 📎 Vue.js
-- [Vue.js](https://github.com/jjungyujin/TIL/blob/main/vue_js/README.md)
+- [Basic](https://github.com/jjungyujin/TIL/blob/main/vue_js/vue_Basic.md)
+- [Project](https://github.com/jjungyujin/TIL/blob/main/vue_js/vue_Project.md)
 
 ### 📎 Node.js
 - [Node.js](https://github.com/jjungyujin/TIL/blob/main/node_js/README.md)
