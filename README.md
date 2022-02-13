@@ -34,4 +34,5 @@
 - [Express](https://github.com/jjungyujin/TIL/blob/main/node_js/express.md)
 
 ### 📎 SQL database
-- [MySQL](https://github.com/jjungyujin/TIL/blob/main/MySQL/README.md)
+- [MySQL](https://github.com/jjungyujin/TIL/blob/main/Database/mySQL.md)
+- [withPython](https://github.com/jjungyujin/TIL/blob/main/Database/withPython.md)
