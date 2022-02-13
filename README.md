@@ -31,7 +31,7 @@
 
 ### 📎 Node.js
 - [Node.js](https://github.com/jjungyujin/TIL/blob/main/node_js/node.md)
-- [Express](https://github.com/jjungyujin/TIL/blob/main/express/express.md)
+- [Express](https://github.com/jjungyujin/TIL/blob/main/node_js/express.md)
 
 ### 📎 SQL database
 - [MySQL](https://github.com/jjungyujin/TIL/blob/main/MySQL/README.md)
