@@ -30,8 +30,8 @@
 - [Project](https://github.com/jjungyujin/TIL/blob/main/vue_js/vue_Project.md)
 
 ### 📎 Node.js
-- [Node.js](https://github.com/jjungyujin/TIL/blob/main/node_js/README.md)
-- [Express](https://github.com/jjungyujin/TIL/blob/main/express/README.md)
+- [Node.js](https://github.com/jjungyujin/TIL/blob/main/node_js/node.md)
+- [Express](https://github.com/jjungyujin/TIL/blob/main/express/express.md)
 
 ### 📎 SQL database
 - [MySQL](https://github.com/jjungyujin/TIL/blob/main/MySQL/README.md)
