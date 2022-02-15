@@ -89,3 +89,13 @@ npm run start
 
 2. `package-lock.json`  
 설치한 모듈 정보를 자세히 담고 있는 파일
+
+## 03. 오류 다루기
+1. MySQL 8.0 버전 이후 node와의 접속 관련 에러  
+
+"Client does not support authentication protocol requested by server;"  
+> 아래 SQL문 실행 후 재시도
+```
+// password에 실제 암호 입력
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+```
