@@ -2,6 +2,7 @@
 ## VS code Extension ?
 > Visual Studio Code의 확장 기능 (=플러그인)  
 > 다양한 기능으로 좋은 개발환경 구축 가능
+> command + shift + p 단축키로 검색 후 실행
 
 ## Material Theme
 테마 적용으로 가독성 향상  
@@ -22,3 +23,7 @@ HTML Tag를 변경 시 쌍을 이루던 나머지 Tag도 자동으로 변경
 
 ## Material Icon Theme
 파일의 확장자에 따른 아이콘 부여
+
+## Gitignore
+`.gitignore` 파일에 추가될 만한 파일을 자동으로 넣어줌  
+gitignore 기능 실행 후 현재 다루는 작업 검색 (python, html, vue 등)
