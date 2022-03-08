@@ -173,7 +173,7 @@ excel_file.close()
 ```
 import openpyxl
 
-def write_tempplate(filename, sheetname, listdata):
+def write_template(filename, sheetname, listdata):
     excel_file = openpyxl.Workbook()
     excel_sheet = excel_file.active
     excel_sheet.column_dimensions['A'].width = 100
@@ -252,7 +252,8 @@ driver.get('사이트 주소')
 driver.find_elements_by_css_selector(REGION_LIST_TAG)[region_num].click()
 ```
 - 스크롤 내리기  
-브라우저에서 클릭을 할 요소가 있는 화면으로 스크롤을 이동시켜야 함
+브라우저에서 클릭을 할 요소가 있는 화면으로 스크롤을 이동시켜야 함  
+❗️ lazy load 요소는 스크롤 내림 후에 로딩되는 요소이므로 크롤링 시 주의
 ```
 driver.execute_script(window.scrollTo(0, 800))
 ```
