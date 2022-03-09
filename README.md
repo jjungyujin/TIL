@@ -42,4 +42,4 @@
 - [Data Processing](https://github.com/jjungyujin/TIL/blob/main/DataEngineering/DataProcessing)
 
 ### ✨ Data Analysis
-- [Machine Learning Basic](https://github.com/jjungyujin/TIL/blob/main/DataAnalysis/ML_Basic)
+- [Machine Learning Basic](https://github.com/jjungyujin/TIL/blob/main/DataAnalysis/MachineLearning/ML_Basic.ipynb)
