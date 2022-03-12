@@ -40,6 +40,27 @@ HTML 파일을 쓸 때 파일의 타입 선언
 <p> I'm practicing <b>html</b> with <i>code it</i> lecture. </p>
 ```
 
+**formatting**
+1. 텍스트 형광펜 효과 - `<mark>`
+2. 텍스트 가운데에 선 긋기 - `<del>`
+3. 텍스트에 밑줄 긋기 - `<ins>`
+4. 텍스트의 아래 첨자 / 위 첨자 - `<sub>`, `<sup>`
+
+**Quotation**
+1. 인용문단 / 인용문장 태그 - `<blockquote cite="">`, `<q>`  
+2. 약자 태그 - `<abbr title=" ">`
+```
+<!-- 태그에 mouse over 하면 title 문구가 tooltip text로 나타남 -->
+<p>The <abbr title="World Health Organization">WHO</abbr> was founded in 1948.</p>
+```
+3. 주소 정보 태그 - `<address>`
+4. 시, 영화, 노래, 그림 등과 같은 저작물 태그 - `<cite>`
+5. 텍스트의 입력 방향 설정 - `<bdo>`
+```
+<!-- 텍스트를 오른쪽에서 왼쪽 방향으로 쓰기 -->
+<bdo dir="rtl">This text will be written from right to left</bdo>
+```
+
 ## 한글 지원을 위한 인코딩
 인코딩 : 0과 1로 문자를 표현하는 규칙  
 브라우저에 따라 한글을 지원하지 않는 경우도 존재  
@@ -63,12 +84,63 @@ HTML 파일을 쓸 때 파일의 타입 선언
 <a href="html 파일의 상대경로"> 내용 </a>
 ```
 
+3. 이메일 작성 링크
+```
+<!-- a 태그에도 title 설정 가능 (mouse over 시 tooltip으로 보여주기) -->
+<a href="mailto:wjd1dbwls@gmail.com" title="Send email to wjd1dbwls@gmail.com">Send email to me</a>
+```
+
+**경우에 따른 style 설정하기**
+1. `a:link` : 기본적으로 보여지는 경우
+2. `a:visited` : 클릭했던 기록이 있는 경우
+3. `a:hover` : mouse over된 경우
+4. `a:active` : 클릭이 활성화된 상태인 경우
+
 ## HTML 이미지 태그
 ```
-<img src="이미지 파일" width ="너비" height="높이">
+<img src="이미지 파일" width ="너비" height="높이" alt="대체할 문구">
 ```
-HTML 파일이 있는 폴더에 이미지 저장  
+alt는 해당 이미지가 화면에 제대로 나타나지 않은 경우 입력한 텍스트를 대신 보여줌
 width, height를 설정하지 않으면 기존 크기대로 설정됨  
+
+**Image Map : 이미지 내에 클릭 가능한 영역 만들기**
+```
+<img src="workplace.jpg" alt="Workplace" usemap="#workmap">
+
+<map name="workmap">
+  <!-- area 태그의 속성
+  shape : 영역의 모양 설정
+  coords : 영역의 위치 및 크기 설정 (이미지의 왼쪽 상단 모서리 기준)
+  href : 클릭 시 이동할 페이지
+  -->
+
+  <area shape="rect" coords="34,44,270,350" alt="Computer" href="computer.htm">
+  <area shape="rect" coords="290,172,333,250" alt="Phone" href="phone.htm">
+  <area shape="circle" coords="337,300,44" alt="Coffee" href="coffee.htm">
+</map>>
+```
+
+**picture 태그**
+브라우저 창의 크기(`media`)에 따라 보여줄 이미지(`srcset`) 설정  
+여러 `<source>`를 포함하는 태그  
+마지막 `<img>`는 조건에 맞는 source가 없을 경우 보여줄 이미지 태그
+```
+<picture>
+  <source media="(min-width: 650px)" srcset="img_food.jpg">
+  <source media="(min-width: 465px)" srcset="img_car.jpg">
+  <img src="img_girl.jpg">
+</picture>
+```
+> picture 태그를 사용하는 또다른 목적
+> : 일부 브라우저 또는 장치는 이미지 형식을 지원하지 않을 수 있으므로 `<picture>` 요소를 사용하여 모든 형식의 이미지를 추가
+> 브라우저는 인식하는 첫 번째 형식을 사용하고 다음 요소를 무시함
+```
+<picture>
+  <source srcset="img_avatar.png">
+  <source srcset="img_girl.jpg">
+  <img src="img_beatles.gif" alt="Beatles" style="width:auto;">
+</picture>
+```
 
 ## 구조화된 태그 (표 만들기)
 ```
@@ -154,23 +226,3 @@ html 파일을 실행하여 브라우저를 열기 - css 적용 확인
 
 ## 크롬 개발자 도구
 단축키 : command + option + i
-
-## Formatting
-`<mark>` : 텍스트 형광펜 효과  
-`<del>` : 텍스트 가운데에 선 긋기  
-`<ins>` : 텍스트에 밑줄 긋기  
-`<sub>`, `<sup>` : 텍스트의 아래 첨자 / 위 첨자  
-
-## Quotations
-`<blockquote cite="">`, `<q>` : 인용문단 / 인용문장 태그  
-`<abbr title=" ">` : 약자 태그  
-```
-<p>The <abbr title="World Health Organization">WHO</abbr> was founded in 1948.</p>
-```
-`<address>` : 주소 정보 태그  
-`<cite>`: 시, 영화, 노래, 그림 등과 같은 저작물 태그  
-`<bdo>`: 텍스트의 방향 설정  
-```
-<!-- 텍스트를 오른쪽에서 왼쪽 방향으로 쓰기 -->
-<bdo dir="rtl">This text will be written from right to left</bdo>
-```
