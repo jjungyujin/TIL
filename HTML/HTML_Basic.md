@@ -120,15 +120,14 @@ div와는 다르게 단독적인 단락으로 나누지 않음
 ```
 <html>
 <head>
-
   <link rel="stylesheet" type="text/css" href="파일명(상대경로 포함)">
 </head>
 <body>
-
   <script src="파일명(상대경로 포함)"></script>
 </body>
 </html>
 ```
+
 css 파일에서는 html의 태그를 지정하여 style을 정의하고  
 js 파일에 있는 함수를 태그에 적용할 때는 html 파일의 태그에 속성으로 넣어줌
 ```
@@ -150,8 +149,28 @@ html 파일을 실행하여 브라우저를 열기 - css 적용 확인
 웹 사이트에 영향을 주진 않음  
 코드의 가독성을 높이기 위한 문구
 ```
-<!-- 코멘트 -->
+<!-- comment -->
 ```
 
 ## 크롬 개발자 도구
 단축키 : command + option + i
+
+## Formatting
+`<mark>` : 텍스트 형광펜 효과
+`<del>` : 텍스트 가운데에 선 긋기
+`<ins>` : 텍스트에 밑줄 긋기
+`<sub>`, `<sup>` : 텍스트의 아래 첨자 / 위 첨자
+
+## Quotations
+`<blockquote cite="">`, `<q>` : 인용문단 / 인용문장 태그
+`<abbr title=" ">` : 약자 태그
+```
+<p>The <abbr title="World Health Organization">WHO</abbr> was founded in 1948.</p>
+```
+`<address>` : 주소 정보 태그
+`<cite>`: 시, 영화, 노래, 그림 등과 같은 저작물 태그
+`<bdo>`: 텍스트의 방향 설정
+```
+<!-- 텍스트를 오른쪽에서 왼쪽 방향으로 쓰기 -->
+<bdo dir="rtl">This text will be written from right to left</bdo>
+```
