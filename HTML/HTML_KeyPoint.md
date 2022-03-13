@@ -99,3 +99,19 @@ inline 요소들은 각 박스의 baseline들이 맞춰져 정렬됨
 `display: list-item;`으로 설정되어 있음 ([css로 리스트 스타일링 - 06](https://github.com/jjungyujin/TIL/blob/main/CSS/CSS_KeyPoint.md))  
 
 > [ul을 이용한 웹 페이지의 네비게이션 바 만들기](https://github.com/jjungyujin/TIL/blob/main/HTML/web_nav.html)
+
+# 📎 04. Iframe
+웹 페이지 안에 웹 페이지 화면 나타내기
+```
+<iframe src="url" title="description"></iframe>
+```
+
+링크 태그의 `target` 속성으로 Iframe의 페이지 이동 가능
+```
+<iframe src="demo_iframe.htm" name="iframe_a" title="Iframe Example"></iframe>
+
+<p><a href="https://www.w3schools.com" target="iframe_a">W3Schools.com</a></p>
+```
+
+# 📎 05. Responsive
+# 📎 06. Forms
