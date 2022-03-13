@@ -165,6 +165,38 @@ width, height를 설정하지 않으면 기존 크기대로 설정됨
 - `tr` : 테이블의 한 행  
 - `th`, `td` : 해당 행의 열, 머리글에서의 열과 본문에서의 열의 수가 같아야 함
 
+**Table Borders**
+`border-collapse` : 중복되는 경계선 없애기
+```
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+```
+
+**Table Headers**
+- `colspan` : 2개 이상의 열을 하나의 Header로 묶기
+- `rowspan` : 2개 이상의 행을 하나의 Header로 묶기
+```
+<table style="width:100%">
+  <tr> 
+  	<th colspan="2">Info</th>
+  </tr>
+  <tr>
+    <th>Name</th>
+    <td>Jill</td>
+  </tr>
+  <tr>
+    <th rowspan="2">Phone</th>
+    <td>555-1234</td>
+  </tr>
+  <tr>
+    <td>555-8745</td>
+  </tr>
+</table>
+``` 
+- `<caption>` : 테이블 제목
+
 # 📎 02. 섹션
 ## 클래스(class)와 아이디(id)
 태그를 구분하기 위한 속성

@@ -268,3 +268,6 @@ li {
   list-style: none;
 }
 ```
+
+## ul의 marker
+`list-style-type`: `disc`(default), `circle`, `square`, `none`
