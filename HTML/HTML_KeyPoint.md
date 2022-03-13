@@ -98,4 +98,4 @@ inline 요소들은 각 박스의 baseline들이 맞춰져 정렬됨
 순서가 없는 리스트 (Unordered List)  
 `display: list-item;`으로 설정되어 있음 ([css로 리스트 스타일링 - 06](https://github.com/jjungyujin/TIL/blob/main/CSS/CSS_KeyPoint.md))  
 
-> [ul을 이용한 웹 페이지의 네비게이션 바 만들기](https://github.com/jjungyujin/TIL/blob/main/HTML/web_nav.htmlx)
+> [ul을 이용한 웹 페이지의 네비게이션 바 만들기](https://github.com/jjungyujin/TIL/blob/main/HTML/web_nav.html)
