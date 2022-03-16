@@ -42,4 +42,5 @@
 - [Data Processing](https://github.com/jjungyujin/TIL/blob/main/DataEngineering/DataProcessing)
 
 ### ✨ Data Analysis
+- [Background - Numpy](https://github.com/jjungyujin/TIL/blob/main/DataAnalysis/numpy.ipynb)
 - [Machine Learning Basic](https://github.com/jjungyujin/TIL/blob/main/DataAnalysis/MachineLearning/ML_Basic.ipynb)
