@@ -17,7 +17,7 @@ macOS 버전에 따라 사용 가능한 Workbench의 버전이 다름
 Workbench에서 Connection 접속
 
 ### 데이터베이스 생성하기
-```
+```sql
 CREATE DATABASE gemini
 ```
 

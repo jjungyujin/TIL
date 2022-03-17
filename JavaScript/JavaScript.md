@@ -4,17 +4,17 @@
 ## 00. Intro
 ### html 파일과 연결 시키기
 `body`태그가 닫히기 전 아래 코드 추가
-```
+```html
 <script src="파일명.js"></script>
 ```
 
 ### 출력 함수
-```
+```js
 console.log('출력할 내용');
 ```
 
 ### 변수 선언
-```
+```js
 let 변수명 = 변수값;
 const 변수명 = 변수값;
 ```
@@ -23,7 +23,7 @@ let과 const의 차이점
 > `const`는 변수 재선언, 재할당 불가능
 
 ### 함수 선언
-```
+```js
 fuction 함수 이름() {
   명령;
   명령;
@@ -40,7 +40,7 @@ fuction 함수 이름() {
 id : 하나의 태그에 부여하는 고유한 값  
 해당 태그 내부에 있는 내용을 모두 불러옴  
 없는 태그를 선택 시 `null` 반환
-```
+```js
 document.getElementById('id 값');
 
 // 예시
@@ -53,7 +53,7 @@ console.log(myNumberTag);
 유사 배열(리스트) 형태로 태그들을 불러오며 인덱스로 접근 가능  
 하나의 태그만 선택하더라도 인덱스 `[0]`으로 접근해야 함
 없는 클래스 선택 시 `null`이 아닌 빈 배열 반환 
-```
+```js
 document.getElementsByClassName('class 이름');
 
 // 예시
@@ -66,7 +66,7 @@ console.log(myTags[1]);
 css Selector 문법 적용 : `.클래스 이름` 또는 `#id`  
 최초 발견된 태그만 불러오려면 `document.querySelector`  
 해당 태그 모두 불러오려면 `document.querySelectorAll` : 유사 배열(리스트) 형태로 반환
-```
+```js
 document.querySelector('css 선택자');
 
 // 예시
@@ -79,13 +79,13 @@ console.log(myTags);
 ### 이벤트와 버튼 클릭
 버튼의 클릭 이벤트에 원하는 동작 실행 시키기 : 이벤트 핸들링  
 구체적인 동작을 구현한 함수 : 이벤트 핸들러(이벤트 리스너)
-```
+```js
 // js 코드 (이벤트 핸들러)
 function greeting() {
   console.log('Hello Codeit!');
 }
-
-// html 코드
+```
+```html
 <input type="button" onclick="greeting">
 ```
 
@@ -97,7 +97,7 @@ function greeting() {
 ### DOM
 Document Object Model (문서 객체 모델)  
 html 문서 내의 모든 태그들은 개별적인 객체로 다룰 수 있음
-```
+```js
 console.log(document); // 태그 형태로 반환
 console.log(typeof document); // object
 console.dir(document); // 객체 형태로 반한
@@ -114,7 +114,7 @@ DOM 트리 내의 객체 : `Node`
 ### DOM 트리 여행하기
 현재 노드(객체)에서 다른 객체로 접근할 때 사용
 > [참고 html 코드](https://github.com/jjungyujin/TIL/blob/main/JavaScript/codeit_02.html)
-```
+```js
 const firstTag = document.querySelector('#list-1');
 console.log(firstTag);
 
@@ -136,7 +136,7 @@ console.log(firstTag.lastElementChild);
 요소 안의 html을 문자열로 리턴  
 태그들 사이의 들여쓰기와 줄바꿈 포함  
 요소 안의 html을 수정/추가할 때 사용
-```
+```js
 console.log(firstTag.innerHTML);
 firstTag.innerHTML += '<li>Exotic</li>';
 ```
@@ -147,30 +147,30 @@ firstTag.innerHTML += '<li>Exotic</li>';
 
 3. textContent  
 요소 안의 내용 중 html 태그 부분을 제외한 부분 리턴  
-```
+```js
 firstTag.textContent = 'new text';
 ```
 
 ### 요소 노드 추가하기
 1. 요소 노드 만들기
-```
+```js
 const newNode = document.createElement('요소 이름');
 ```
 
 2. 요소 노드 꾸미기
-```
+```js
 newNode.textContent = '추가할 텍스트';
 ```
 
 3. 요소 노드 추가하기
-```
+```js
 // 자식 노드로 추가 : Node.prepend, append
 // 형제 노드로 추가 : Node.before, after
 기존 노드.prepend(newNode);
 ```
 
 ### 노드 삭제와 이동하기
-```
+```js
 const firstTag = document.querySelector('#list-1');
 const secondTag = document.querySelector('#list-2');
 
@@ -185,7 +185,7 @@ firstTag.children[2].after(secondTag.children[1]);
 ### 하나의 이벤트에 여러 개의 독립적인 핸들러 등록하기
 addEventListener로 핸들러 등록하기 (권장)  
 두 번째 파라미터로 함수를 전달할 때 함수를 호출하지 않도록 주의
-```
+```js
 let btn = document.querySelector('#myBtn');
 
 function event1(){
@@ -200,14 +200,13 @@ btn.addEventListener('click', event1);
 btn.addEventListener('click', event2);
 ```
 > 핸들러 제거하기
-```
+```js
 btn.removeEventListener('click', event2);
 ```
 
 ### 매개변수를 받는 핸들러 등록하기
 html 태그 안에 함수 등록할 때 ( ) 안에 전달할 파라미터 넣어주기  
 `this` : 해당 태그 객체를 전달
-```
-// html 코드
+```html
 <input type="button" class="edit" onclick="editToDo(this)" value="수정">
 ```

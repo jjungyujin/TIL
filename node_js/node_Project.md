@@ -3,7 +3,7 @@
 ## 01. 프로젝트 생성하기
 ### express-generator 설치
 터미널에서 아래 코드 실행
-```
+```terminal
 // node 설치 버전 확인
 node
 
@@ -24,7 +24,7 @@ frontend 서버가 backend 서버에 접속할 수 있도록 하기 위한 모�
 - moment  
 datetime 설정을 위한 모듈
 
-```
+```terminal
 // package.json에 지정된 모듈 설치
 npm install
 
@@ -42,7 +42,7 @@ url에 따른 connection 코드 파일을 담는 폴더
 ### app.js
 설치한 모듈 중 사용할 모듈 선언  
 `routes`와 해당 url 연결  
-```
+```js
 var cors = require('cors');
 var areaRouter = require('./routes/areaConcert');
 
@@ -61,7 +61,7 @@ db와의 connection을 위한 함수
 ### .env
 데이터베이서 정보를 담는 파일  
 해당 파일은 보안 상의 이유로 github에 업로드 하지 않도록 함
-```
+```py
 DB_HOST = localhost
 DB_USER = root
 DB_PASSWORD = *****
@@ -77,13 +77,12 @@ DB_NAME = GEMINI
 1. `package.json`  
 설치한 모듈 정보를 간략히 담고 있는 파일  
 `script`에 설정된 명령어로 실행되는 코드 확인 가능
-```
-// package.json
+```json
 "scripts": {
   "start": "node ./bin/www"
 }
-
-// terminal
+```
+```terminal
 npm run start
 ```
 
@@ -95,7 +94,7 @@ npm run start
 
 "Client does not support authentication protocol requested by server;"  
 > 아래 SQL문 실행 후 재시도
-```
-// password에 실제 암호 입력
+```sql
+-- password에 실제 암호 입력
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
 ```

@@ -1,6 +1,6 @@
 # 📎 01. Box Model
 ## margin과 padding
-```
+```css
 .p1 {
   // 요소 간의 여백
   //  top, right, bottom, left
@@ -12,7 +12,7 @@
 }
 ```
 margin으로 가운데 정렬
-```
+```css
 .p1 {
   margin: 0 auto;
 }
@@ -20,7 +20,7 @@ margin으로 가운데 정렬
 
 ## width와 height
 창의 크기가 변화에 따른 박스의 크기 변화 조절
-```
+```css
 .p1 {
   width: 1000px;
   height: 200px;
@@ -38,7 +38,7 @@ margin으로 가운데 정렬
 - `: auto` : 내용이 넘치는 경우에만 스크롤바 생성
 
 ## border
-```
+```css
 .p1 {
   // 테두리의 굵기(width), 선의 종류(style), 테두리의 색(color)
   border: 2px solid #4d9fff;
@@ -57,12 +57,12 @@ margin으로 가운데 정렬
 - `border-radius` : 테두리 둥글게
 - `background-color`: 배경색
 - `box-shadow` : 그림자
-```
+```css
 .p1 {
-  // 가로 위치, 세로 위치 - 양수 : 오른쪽, 아래 / 음수 : 왼쪽, 위
+  /* 가로 위치, 세로 위치 - 양수 : 오른쪽, 아래 / 음수 : 왼쪽, 위 */
   box-shadow: 50px 30px;
 
-  // 그림자 흐리게, 크기, 색 설정
+  /* 그림자 흐리게, 크기, 색 설정 */
   box-shadow: 50px 30px 50px 10px red;
 }
 ```
@@ -75,42 +75,42 @@ margin으로 가운데 정렬
 전체 박스의 크기를 width와 height로 고정해줌
 
 ## 배경이미지 넣기
-```
+```css
 .div {
   background-image: url("이미지파일명(상대경로 포함)");
-  // cover : 사진의 비율을 유지, 박스를 꽉 채움
+  /* cover : 사진의 비율을 유지, 박스를 꽉 채움 */
   background-size: cover;
-  // position : 배경이미지의 위치(기준점) 설정
-  // 사진이 잘리는 경우 기준점을 중점적으로 보여줌
+  /* position : 배경이미지의 위치(기준점) 설정
+  사진이 잘리는 경우 기준점을 중점적으로 보여줌 */
   background-position: center center;
 }
 ```
 
 # 📎 02. CSS 제대로 활용하기
 ## 자식과 직속 자식
-```
-// 'div1' 클래스를 갖고 있는 요소의 자식 중 모든 <i> 태그
+```css
+/* 'div1' 클래스를 갖고 있는 요소의 자식 중 모든 <i> 태그 */
 .div1 i {
   color: orange;
 }
 
-// 'div1' 클래스를 갖고 있는 요소의 직속 자식 중 모든 <i> 태그
+/* 'div1' 클래스를 갖고 있는 요소의 직속 자식 중 모든 <i> 태그 */
 .div1 > i {
   color: orange;
 }
 ```
 
 ## 복수 선택
-```
-// 'two' 클래스를 가지고 있는 태그 모두와 'four' 클래스를 가지고 있는 태그 모두 선택
+```css
+/* 'two' 클래스를 가지고 있는 태그 모두와 'four' 클래스를 가지고 있는 태그 모두 선택 */
 .two, .four {
   color: orange;
 }
 ```
 
 ## 여러 조건
-```
-// 'outside' 클래스를 갖고 있으면서 'one' 클래스도 갖고 있는 태그
+```css
+/* 'outside' 클래스를 갖고 있으면서 'one' 클래스도 갖고 있는 태그 */
 .outside.one {
   color: blue;
 }
@@ -120,16 +120,16 @@ margin으로 가운데 정렬
 콜론(:)으로 가상 클래스 선택
 
 1. n번째 자식
-```
-// .div1의 자식인 <p> 태그 중 3번째
+```css
+/* .div1의 자식인 <p> 태그 중 3번째 */
 .div1 p:nth-child(3) {
   color: blue;
 }
 ```
 
 2. 마우스 오버 (hover)
-```
-// 마우스가 <h1> 태그에 올라갔을 때
+```css
+/* 마우스가 <h1> 태그에 올라갔을 때 */
 h1:hover {
   color: green;
 }
@@ -147,7 +147,7 @@ color, font-family, font-size, list-style, text-align
 ## Display 속성
 각 요소마다 display 값이 정해져 있지만 css 코드로 변경 가능  
 > `inline-block` 으로 변경하기
-```
+```css
 i {
   display: inline-block;
   width: 200px;
@@ -156,13 +156,13 @@ i {
 
 ## 가운데 정렬
 > inline 또는 inline-block 요소
-```
+```css
 .container {
   text-align: center;
 }
 ```
 > block 요소
-```
+```css
 .block-element {
   margin-left: auto;
   margin-right: auto;
@@ -174,11 +174,10 @@ i {
 - static : 원래 있어야 할 위치 (`position`의 기본값)  
 - relative : 원래 있어야 할 위치를 기준으로 위치 설정
 
-```
-// css 코드
+```css
 b {
   position: relative;
-  // 원래 위치에서 top, left에 간격 두기
+  /* 원래 위치에서 top, left에 간격 두기 */
   top : 30px;
   left: 30px;
 }
@@ -190,11 +189,10 @@ b {
 
 ## fixed position
 브라우저를 기준으로 위치 설정
-```
-// css 코드
+```css
 b {
   position: fixed;
-  // 브라우저에서 top, left에 간격 두기
+  /* 브라우저에서 top, left에 간격 두기 */
   top : 30px;
   left: 30px;
 }
@@ -230,25 +228,25 @@ static(기본)을 제외한 relative, fixed, absolute position을 의미
 ## clear
 float와 함께 쓰이는 속성  
 float에서의 줄바꿈 역할  
-```
+```css
 #div1 {
   float: right;
 }
 #div2 {
   float: right;
-  // 오른쪽에 아무런 요소가 없도록 함
-  // div1 밑에 줄 오른쪽으로 배치
+  /* 오른쪽에 아무런 요소가 없도록 함 */
+  /* div1 밑에 줄 오른쪽으로 배치 */
   clear: right;
 }
 ```
 사용 목적
 > 어떤 `div` 내의 요소를 모두 공중에 띄우면 해당 `div`의 `height`를 0으로 받아들임  
 > 브라우저 `width`를 조절함에 따라 배치가 불규칙해짐 (ex. 밑에 텍스트 요소를 추가한 경우)
-```
-// html
+```html
 <div class="clearfix"></div>
+```
 
-// css
+```css
 .clearfix {
   clear: left;
 }
@@ -259,7 +257,7 @@ float에서의 줄바꿈 역할
 
 # 📎 06. List styling
 ## 기본 스타일링 제거
-```
+```css
 ul {
   padding-left: 0;
 }

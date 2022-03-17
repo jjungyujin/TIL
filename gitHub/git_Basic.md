@@ -18,7 +18,7 @@ Git은 리눅스(Linux)라는 운영 체제를 만든 리누스 토발즈가 만
 > 프로젝트 디렉토리의 변화 과정을 기록하는 곳  
 > commit이 저장되는 곳  
 
-```
+```terminal
 mkdir (폴더명)
 cd (폴더명)
 git init
@@ -28,16 +28,16 @@ git init
 프로젝트 디렉토리의 특정 모습을 하나의 버전으로 저장  
 
 1. 개발자의 정보 설정
-```
+```terminal
 git config user.name "(사용자명)"
 git config user.email "(이메일 주소)"
 ```
 2. 파일 add (tracked 상태로 만들기)
-```
+```terminal
 git add (파일명)
 ```
 3. 커밋 메세지 남기기
-```
+```terminal
 git commit -m "(커밋메세지)"
 ```
 
@@ -62,18 +62,18 @@ HEAD가 가리키는 커밋에 따라 working directory 구성
 # 📎 03. GitHub 시작하기
 ## Push와 Pull
 로컬 레포지토리를 리모트 레포지토리와 연결
-```
+```terminal
 git remote add origin (리모트 레포지토리의 주소)
 ```
 
 push 하기  
 > 처음 push를 할 때에만  `-u origin master` 옵션을 사용하고 이후에는 `git push`로 변경사항 반영
-```
+```terminal
 git push -u origin master
 ```
 
 pull 하기
-```
+```terminal
 git pull
 ```
 
@@ -83,18 +83,18 @@ GitHub의 레포지토리에서는 README.md를 화면에 보여주도록 설정
 
 # 📎 04. 커밋 다루기
 ## 커밋 히스토리 살펴보기
-```
+```terminal
 git log
 git log --pretty=oneline
 git show (커밋 해시)
 ```
 긴 명령어에 alias 설정  
-```
+```terminal
 git config alias.history 'log  --pretty=oneline'
 ```
 
 ## 최신 커밋 수정하기
-```
+```terminal
 git commit --amend
 ```
 위 코드를 실행하면 최신 커밋에 대한 창이 뜬다.  
@@ -102,12 +102,12 @@ git commit --amend
 **esc**를 누른 후 ```:wq```를 입력하면 수정이 완료된다.
 
 ## 두 커밋 간의 차이 보기
-```
+```terminal
 git diff (앞선 커밋 해시) (이후 커밋 해시)
 ```
 
 ## 이전 커밋으로 git reset
-```
+```terminal
 git reset --(옵션) (커밋 해시)
 ```
 
@@ -126,12 +126,12 @@ reset의 세가지 옵션
 
 ## 커밋에 tag 달기
 보통 프로젝트에서 주요 버전의 시작점이 되는 커밋에 태그 이용
-```
+```terminal
 git tag (태그 이름) (커밋 해시)
 ```  
 
 tag 조회
-```
+```terminal
 git tag
 git show (tag 이름)
 ```
@@ -140,7 +140,7 @@ git show (tag 이름)
 ## 프로젝트 레포지토리 복사하기
 github의 프로젝트 레포지토리에서 `fork`를 누르면 내 github 레포지토리에 복사가 된다.  
 터미널에서 내가 원하는 디렉토리로 이동하고 아래와 같은 코드를 실행하면 working directory가 생성된다.
-```
+```terminal
 git clone (내 리모트 레포지토리의 GitHub 상 주소)
 ```
 
@@ -153,7 +153,7 @@ fork한 레포지토리에서 작업하기 전 branch를 생성하여 각 기능
 
 ## PR 하기 전 여러개의 commit 합치기
 아래 코드는 HEAD부터 최근 3개의 커밋을 합치는 코드이다.
-```
+```terminal
 git rebase -i HEAD~3
 ```
 위 코드를 실행하면 해당 선택한 커밋들에 대한 창이 뜬다.  
@@ -166,13 +166,13 @@ git rebase -i HEAD~3
 ## 강제로 push하기
 리모트 레포지토리의 commit을 로컬 레포지토리의 commit이 포함하고 있지 않으면 push 작업에 오류가 발생한다.  
 이런 경우 `-f` 옵션을 통해 강제로 `push`할 수 있다.
-```
+```terminal
 git push -f
 ```
 
 ## 프로젝트 레포지토리 main을 내 main으로 가져오기
 프로젝트 레포지토리 main을 pull 해오려면 내 로컬 레포지토리의 remote에 추가해주어야 한다.
-```
+```terminal
 git remote add teamlab (프로젝트 레포지토리 주소)
 git pull teamlab main
 git push

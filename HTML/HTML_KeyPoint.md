@@ -31,25 +31,24 @@ inline과 inline-block 요소의 가장 큰 특징 : 해당 요소를 텍스트�
 
 ## 다양한 링크
 > 텍스트가 아닌 요소 노드에 링크를 연결  
-```
+```html
 <a href="가고 싶은 주소"> <링크를 연결할 요소> </a>
 ```
 
 > 여러 요소를 링크와 연결  
-```
-// html - <div>를 <a>로 변경
+```html
 <a class="google=link" href="https://google.com" target="_blank">
   <img>
   <h1> </h1>
   <p> </p>
 </a>
-
-// css
+```
+```css
 .a {
-  // a의 display 변경
+  /* a의 display 변경 */
   display: block;
 
-  // 텍스트 링크 기본 스타일 제거
+  /* 텍스트 링크 기본 스타일 제거 */
   color: black;
   text-decoration: none;
 }
@@ -76,14 +75,14 @@ inline 요소들은 각 박스의 baseline들이 맞춰져 정렬됨
 1. `<ol>`  
 순서가 있는 리스트 (Ordered List)   
 순서대로 `<li>` (list item)에 번호를 부여해서 출력함
-```
+```html
 <ol>
   <li>집 청소</li>            // 1. 집 청소
   <li>영어 단어 외우기</li>     // 2. 영어 단어 외우기
 </ol>
 ```
 > type 속성
-```
+```html
 <ol type="a">
   <li>집 청소</li>            // a. 집 청소
   <li>영어 단어 외우기</li>     // b. 영어 단어 외우기
@@ -102,12 +101,12 @@ inline 요소들은 각 박스의 baseline들이 맞춰져 정렬됨
 
 # 📎 04. Iframe
 웹 페이지 안에 웹 페이지 화면 나타내기
-```
+```html
 <iframe src="url" title="description"></iframe>
 ```
 
 링크 태그의 `target` 속성으로 Iframe의 페이지 이동 가능
-```
+```html
 <iframe src="demo_iframe.htm" name="iframe_a" title="Iframe Example"></iframe>
 
 <p><a href="https://www.w3schools.com" target="iframe_a">W3Schools.com</a></p>

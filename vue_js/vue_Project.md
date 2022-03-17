@@ -1,7 +1,7 @@
 ## 01. 프로젝트 생성하기
 ### Vue 설치
 터미널에서 아래 코드 실행
-```
+```terminal
 // 가상환경 활성화
 conda activate dssa
 
@@ -10,12 +10,12 @@ npm install vue
 
 ### Vue-cli 설치
 프로젝트 생성을 돕는 vue 공식 CLI
-```
+```terminal
 npm install -g @vue/cli
 ```
 
 ### 프로젝트 생성하기
-```
+```terminal
 // 공식 템플릿으로 프로젝트 생성하기
 // vue init webpack 생성할 프로젝트 이름
 vue init webpack gemini-project
@@ -37,20 +37,20 @@ vue init webpack gemini-project
 4. `src` > `App.vue`  
 모든 컴포넌트를 관리하는 또 하나의 컴포넌트
 해당 파일에서 `style.css` 연결 필요  
-```
-// 모든 라우터가 아래 view 태그에서 보여짐
+```vue
+<!-- 모든 라우터가 아래 view 태그에서 보여짐 -->
 <template>
   <router-view/>
 </template>
 
-// 다른 파일에서 해당 파일을 import 하기 위해 필요한 코드
+<!-- 다른 파일에서 해당 파일을 import 하기 위해 필요한 코드 -->
 <script>
 export default {
   name: 'App'
 }
 </script>
 
-// style.css와 연결되는 코드
+<!-- style.css와 연결되는 코드 -->
 <style>
 @import '../styles.css';
 </style>

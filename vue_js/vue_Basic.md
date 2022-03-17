@@ -15,7 +15,7 @@ MVVM 패턴의 뷰모델(ViewModel) 레이어에 해당하는 화면(View)단 �
 ### Reactivity 구현
 데이터 바인딩을 위한 속성과 함수 정의
 > 기본 문법
-```
+```js
 Object.defineProperty(대상 객체, 객체의 속성, {
   정의할 내용
 })
@@ -27,14 +27,14 @@ Object.defineProperty(대상 객체, 객체의 속성, {
 인스턴스 : 뷰로 개발할 때 필수로 생성해야 하는 코드  
 - 생성된 인스턴스는 변수에 담을 수 있음  
 - Vue에서 기본적으로 제공하는 기능과 속성 사용 가능
-```
+```js
 var vm = new Vue();
 ```
 
 ### 인스턴스와 생성자 함수
 생성자 함수 : 인스턴스를 생성하는 함수
 > 예시 -  person 인스턴스 생성자 함수
-```
+```js
 // 생성자 함수명 : 알파벳 대문자로 시작
 function Person(name, job) {
   this.name = name;
@@ -64,12 +64,12 @@ dictionary type으로 속성 정의
 
 ### 컴포넌트 등록 
 전역 컴포넌트 등록
-```
+```js
 Vue.component('컴포넌트 이름', {컴포넌트 내용});
 ```
 
 자역 컴포넌트 등록
-```
+```js
 <script>
   new Vue({
     el: '#app',
@@ -120,20 +120,20 @@ Vue.component('컴포넌트 이름', {컴포넌트 내용});
 ### 뷰 라우터 소개와 설치
 뷰 라우터 : 뷰 라이브러리를 이용하여 페이지 이동을 구현할 때 사용하는 라이브러리
 > CDN 방식 설치 : vue.js 불러오는 코드 아래에 router 추가 (순서 유의)
-```
+```html
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
 ```
 
 ### 뷰 라우터 등록 및 인스턴스 연결
 라우터 인스턴스 생성
-```
+```js
 var router = new VueRouter({
   // 라우터 옵션
 })
 ```
 인스턴스 연결
-```
+```js
 new Vue({
       el: '#app',
       // 인스턴스의 router 속성에 연결할 VueRouter 지정
@@ -145,7 +145,7 @@ new Vue({
 routes : 페이지의 라우팅 정보를 배열로 담고 있음  
 > 라우팅 정보 : 어떤 url로 이동했을 때 뿌려질 페이지의 정보
 > 페이지의 갯수 만큼 배열 안에 객체가 필요함
-```
+```js
 var router = new VueRouter({
       routes: [
         // 객체 1. 로그인 페이지 정보
@@ -176,7 +176,7 @@ var router = new VueRouter({
 axios : 뷰에서 권고하는 HTTP 통신 라이브러리  
 
 > cdn식 axios 설치
-```
+```html
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 ```
 
@@ -200,7 +200,7 @@ axios : 뷰에서 권고하는 HTTP 통신 라이브러리
 `v-`로 시작하는 속성을 뷰에서 인식
 
 ### 데이터 바인딩과 computed 속성
-```
+```html
 <html>
   <div> {{num}} </div>
   <div> {{doubleNum}} </div>
@@ -223,7 +223,7 @@ axios : 뷰에서 권고하는 HTTP 통신 라이브러리
 
 ### 뷰 디렉티브와 v-bind
 id, class 앞에 `v-bind:`을 붙여주면 뷰에서 인식
-```
+```html
 <html>
 <div>
   <p v-bind:id="myId" v-bind:class="text-class">{{text}}</p>
@@ -253,7 +253,7 @@ v-show는 화면에서 보이지 않아도 태그 자체가 사라지는 게 아
 
 ### v-model
 `input` 박스에 입력된 값을 인스턴스 데이터에 넣어주기 위한 디렉티브
-```
+```html
 <html>
 <div id="app">
   <input type="text" v-model="message">
