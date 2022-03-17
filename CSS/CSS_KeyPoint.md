@@ -2,12 +2,12 @@
 ## margin과 padding
 ```css
 .p1 {
-  // 요소 간의 여백
-  //  top, right, bottom, left
+  /* 요소 간의 여백 */
+  /* top, right, bottom, left */
   margin: 100px 10px 100px 10px;
 
-  // 박스 테두리와 내용의 여백
-  // top, right, bottom, left
+  /* 박스 테두리와 내용의 여백 */
+  /* top, right, bottom, left */
   padding: 10px, 50px, 10px, 50px;
 }
 ```
@@ -25,7 +25,7 @@ margin으로 가운데 정렬
   width: 1000px;
   height: 200px;
 
-  // 최댓값과 최솟값 설정 - 창의 크기 변화에 따른 박스 크기의 변화를 조절
+  /* 최댓값과 최솟값 설정 - 창의 크기 변화에 따른 박스 크기의 변화를 조절 */
   min-width: 500px;
   min-height: 100px;
 }
@@ -40,7 +40,7 @@ margin으로 가운데 정렬
 ## border
 ```css
 .p1 {
-  // 테두리의 굵기(width), 선의 종류(style), 테두리의 색(color)
+  /* 테두리의 굵기(width), 선의 종류(style), 테두리의 색(color) */
   border: 2px solid #4d9fff;
 }
 ```
