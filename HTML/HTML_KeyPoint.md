@@ -113,4 +113,57 @@ inline 요소들은 각 박스의 baseline들이 맞춰져 정렬됨
 ```
 
 # 📎 05. Responsive
+## Responsive web design
+모든 디바이스에서 보기 좋은 웹 페이지 만들기  
+스크린의 크기에 따라 자동적으로 조절됨
+
+## Setting The Viewport
+`<meta>`는 페이지의 viewport를 설정하고, 페이지의 크기와 배율을 제어하는 방법에 대한 브라우저의 지침을 제공
+```html
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+```
+
+## Responsive Images
+1. `width`를 100%로 설정
+```html
+<img src="img_girl.jpg" style="width:100%;">
+```
+
+2. `max-width`를 100%로 설정  
+원본 크기보다 커지지 않도록 하기 위한 설정
+```html
+<img src="img_girl.jpg" style="max-width:100%;">
+```
+
+## Responsive Text Size
+`font-size`에서 단위 `vw`는 viewport width를 의미
+```html
+<!-- viewport width의 10% 크기로 설정 -->
+<h1 style="font-size:10vw">Hello World</h1>
+```
+
+## Media Queries
+서로 다른 브라우저의 크기에 완전히 다른 스타일 정의하기
+```css
+.left, .right {
+  float: left;
+  width: 20%; /* default */
+}
+
+.main {
+  float: left;
+  width: 60%; /* default */
+}
+
+/* 브라우저의 width의 breakpoint : 800px: */
+@media screen and (max-width: 800px) {
+  .left, .main, .right {
+    width: 100%; 
+    /* viewport가 800px보다 작거나 같은 경우에 적용됨 */
+  }
+}
+```
+
 # 📎 06. Forms
