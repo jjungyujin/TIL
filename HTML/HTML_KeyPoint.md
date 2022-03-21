@@ -167,3 +167,163 @@ inline 요소들은 각 박스의 baseline들이 맞춰져 정렬됨
 ```
 
 # 📎 06. Forms
+## HTML Forms
+사용자로부터 입력을 받고 입력된 값을 처리하기 위한 목적
+```html
+<form>
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="fname"><br>
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="lname">
+</form>
+```
+
+### Label 태그
+form 요소를 정의하기 위한 태그  
+`for` 속성 : 연결시킬 `input`태그의 `id`값 입력
+
+### Input 태그의 type
+- text & password & email : 텍스트 / 암호 / 이메일 주소 입력창
+- radio & checkbox : 선택지 중 하나 / 0개 이상 선택
+- button : 클릭 가능한 버튼
+- submit & reset ; form 제출 / form의 default 값으로 초기화 버튼
+- color & date : 색상 선택 팔레트 / 날짜 선택 달력
+- file : 첨부파일 선택 버튼
+
+### The Submit Button
+`form` 데이터를 `form-handler`에 넘겨주는 버튼  
+> form-handler  
+입력 받은 데이터를 스크립트로 처리하는 파일
+`<form>`의 action 속성에서 지정
+```html
+<!-- action_page.php 파일에 정보 전송 -->
+<form action="/action_page.php">
+  <label for="fname">First name:</label><br>
+  <!-- value : default로 입력된 값 -->
+  <input type="text" id="fname" name="fname" value="John"><br>
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="lname" value="Doe"><br><br>
+  <input type="submit" value="Submit">
+</form>
+```
+
+### Input 태그의 name
+input 값을 `submit`으로 넘겨주기 위해서는 `name`속성을 반드시 가져야 함
+
+### Input 태그의 Attributes
+- value & placeholder
+- readonly & disabled
+- size & maxlength
+- min & max & pattern & step
+- multiple
+- required & autofocus
+- height & width
+- list
+
+## Form의 속성
+### Action
+`form` 정보를 넘겨받았을 때 수행할 작업을 정의  
+- `"action_page.php"` : `form` 정보를 다루는 server-side script를 담고 있는 파일  
+- 입력 생략 시 현재 페이지가 default로 설정됨
+
+### Target
+submit에 대한 response를 보여줄 화면 설정
+- _blank : 새로운 탭에서 보여주기
+- _self : 현재 윈도우에서 보여주기 (default)
+- framename : 지정한 Iframe에서 보여주기
+
+### Method
+1. get : url 변수로 전송
+사용자의 입력 정보가 url에 노출된다는 문제점  
+get 요청 북마크 가능  
+브라우저마다 길이에 제한이 있음  
+서버의 리소스에서 데이터를 요청할 때 사용 (SELECT)  
+
+2. post : HTTP request의 body에 담아서 전송
+url에 노출되지 않아 보안이 필요한 부분에 사용  
+post 요청 북마크 불가능  
+데이터 길이에 제한 없음  
+서버의 리소스를 새로 생성하거나 업데이트할 때 사용 (CREATE)
+
+### Autocomplete
+입력했던 값을 저장하여 자동 완성하기
+```html
+<form action="/action_page.php" autocomplete="on">
+```
+
+### Novalidate
+유효성(입력값의 여부) 검사하기  
+생략 시 유효성 검사 없이 실행
+```html
+<form action="/action_page.php" novalidate>
+```
+
+## Form의 요소
+### Input & Label
+```html
+<label for="fname">First name:</label>
+<input type="text" id="fname" name="fname">
+```
+
+### Select
+drop-down list 생성하기  
+- selected
+- size
+- multiple
+```html
+<label for="cars">Choose a car:</label>
+<select id="cars" name="cars">
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <!-- selected : default로 fiat 설정 -->
+  <option value="fiat" selected>Fiat</option>
+  <option value="audi">Audi</option>
+</select>
+```
+
+### Textarea
+입력 가능한 텍스트 상자
+```html
+<textarea name="message" rows="10" cols="30">
+The cat was playing in the garden.
+</textarea>
+```
+
+### Button
+```html
+<!-- aler : 알림창 띄우기 -->
+<button type="button" onclick="alert('Hello World!')">Click Me!</button>
+```
+
+### Fieldset & Legend
+`fieldset` : `form`에서 데이터와 관련된 그룹 묶기 (테두리 상자 생성)  
+`legend` : `fieldset`의 표제
+```html
+<form action="/action_page.php">
+  <fieldset>
+    <legend>Personalia:</legend>
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname" value="John"><br>
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lname" value="Doe"><br><br>
+    <input type="submit" value="Submit">
+  </fieldset>
+</form>
+```
+
+### Datalist
+입력 가능하면서 선택지가 있는 입력창 생성
+
+```html
+<form action="/action_page.php">
+  <!-- list 속성에 연결시킬 datalist의 id값 입력 -->
+  <input list="browsers">
+  <datalist id="browsers">
+    <option value="Internet Explorer">
+    <option value="Firefox">
+    <option value="Chrome">
+    <option value="Opera">
+    <option value="Safari">
+  </datalist> 
+</form>
+```
