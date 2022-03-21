@@ -38,6 +38,9 @@
 - [MySQL](https://github.com/jjungyujin/TIL/blob/main/Database/mySQL.md)
 - [withPython](https://github.com/jjungyujin/TIL/blob/main/Database/withPython.py)
 
+### ✨ DataScience
+- [DataScience PKNU 2022](https://github.com/jjungyujin/DataScience_2022S/tree/student)
+
 ### ✨ Data Engineering
 - [Data Processing](https://github.com/jjungyujin/TIL/blob/main/DataEngineering/DataProcessing)
 
