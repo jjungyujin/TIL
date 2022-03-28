@@ -116,6 +116,34 @@ margin으로 가운데 정렬
 }
 ```
 
+## 속성과 속성값
+```css
+/* target 속성을 갖는 태그 */
+a[target] {
+  background-color: yellow;
+}
+
+/* title 속성값이 flower 라는 단어를 포함하는 태그 */
+[title~="flower"] {
+  border: 5px solid yellow;
+}
+
+/* class 속성값이 top 으로 시작하는 태그 */
+[class^="top"] {
+  background: yellow;
+}
+
+/* class 속성값이 test 로 끝나는 태그 */
+[class$="test"] {
+  background: yellow;
+}
+
+/* class 속성값이 te 라는 문자를 포함하는 태그 */
+[class*="te"] {
+  background: yellow;
+}
+```
+
 ## Pseudo-class (가상 클래스)
 콜론(:)으로 가상 클래스 선택
 
