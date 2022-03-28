@@ -90,11 +90,8 @@ HTML 파일을 쓸 때 파일의 타입 선언
 <a href="mailto:wjd1dbwls@gmail.com" title="Send email to wjd1dbwls@gmail.com">Send email to me</a>
 ```
 
-**경우에 따른 style 설정하기**
-1. `a:link` : 기본적으로 보여지는 경우
-2. `a:visited` : 클릭했던 기록이 있는 경우
-3. `a:hover` : mouse over된 경우
-4. `a:active` : 클릭이 활성화된 상태인 경우
+[**경우에 따른 style 설정하기**](https://github.com/jjungyujin/TIL/blob/main/CSS/CSS_KeyPoint.md)
+
 
 ## HTML 이미지 태그
 ```html

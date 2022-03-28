@@ -121,17 +121,37 @@ margin으로 가운데 정렬
 
 1. n번째 자식
 ```css
+/* 모든 <p> 태그 내의 첫번째 <i> 태그들 */
+p i:first-child {
+  color: blue;
+}
+
 /* .div1의 자식인 <p> 태그 중 3번째 */
 .div1 p:nth-child(3) {
   color: blue;
 }
 ```
 
-2. 마우스 오버 (hover)
+2. 링크 관련 가상 클래스
 ```css
-/* 마우스가 <h1> 태그에 올라갔을 때 */
-h1:hover {
-  color: green;
+/* 방문 기록 없는 link */
+a:link {
+  color: #FF0000;
+}
+
+/* 방문 기록 있는 link */
+a:visited {
+  color: #00FF00;
+}
+
+/* 마우스가 link에 올라갔을 때 */
+a:hover {
+  color: #FF00FF;
+}
+
+/* 클릭이 활성화된 상태인 경우 */
+a:active {
+  color: #0000FF;
 }
 ```
 
