@@ -79,7 +79,6 @@ title, meta, css, js 코드를 감싸주는 태그
 
 # 📎 02. 텍스트 스타일링
 ## 내 CSS 스타일 만들기 - 클래스
-CSS파일
 ```css
 .mystyle {
     font-size: 3em;
@@ -87,8 +86,7 @@ CSS파일
     color: blue;
 }
 ```
-
-HTML 파일
 ```html
 <title class="mystyle"> My first Website </title>
 ```
+

@@ -269,3 +269,4 @@ li {
 
 ## ul의 marker
 `list-style-type`: `disc`(default), `circle`, `square`, `none`
+`list-style-image`: url("원하는 이미지 파일")
