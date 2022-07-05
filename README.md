@@ -61,4 +61,5 @@
 
 ### ✨ Data Analysis
 
-- [Machine Learning Basic](https://github.com/jjungyujin/TIL/blob/main/DataAnalysis/MachineLearning/ML_Basic.ipynb)
+- [Machine Learning Overview](https://github.com/jjungyujin/TIL/blob/main/DataAnalysis/MachineLearning/ML_Overview.ipynb)
+- [Machine Learning 기초](https://github.com/jjungyujin/DataScience_2022S)
