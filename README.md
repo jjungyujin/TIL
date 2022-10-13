@@ -57,5 +57,5 @@
 
 ### ✨ Data Analysis
 
-- [Machine Learning Overview](https://github.com/jjungyujin/TIL/blob/main/DataAnalysis/MachineLearning/ML_Overview.ipynb)
+- [Machine Learning Overview](https://github.com/jjungyujin/TIL/blob/main/DataAnalysis/MachineLearning/ML_Overview.md)
 - [Machine Learning 기초](https://github.com/jjungyujin/DataScience_2022S)
