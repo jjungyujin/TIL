@@ -61,4 +61,5 @@
 - [Machine Learning 기초](https://github.com/jjungyujin/DataScience_2022S)
 - [Feature Engineering](https://github.com/jjungyujin/TIL/blob/main/DataAnalysis/MachineLearning/FeatureEngineering)
 - [Machine Learning Extension](https://github.com/jjungyujin/TIL/tree/main/DataAnalysis/MachineLearning/ML_Extension)
+- [Machine Learning Project](https://github.com/jjungyujin/TIL/tree/main/DataAnalysis/MachineLearning/Taurus)
 - [Deep Learning 기초](https://github.com/jjungyujin/Lecture_DeepLearning_2022)
