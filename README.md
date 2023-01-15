@@ -63,3 +63,4 @@
 - [Machine Learning Extension](https://github.com/jjungyujin/TIL/tree/main/DataAnalysis/MachineLearning/ML_Extension)
 - [Machine Learning Project](https://github.com/jjungyujin/TIL/tree/main/DataAnalysis/MachineLearning/Taurus)
 - [Deep Learning 기초](https://github.com/jjungyujin/Lecture_DeepLearning_2022)
+- [Deep Learning Extension](https://github.com/jjungyujin/TIL/tree/main/DataAnalysis/DeepLearning/DL_Extension)
