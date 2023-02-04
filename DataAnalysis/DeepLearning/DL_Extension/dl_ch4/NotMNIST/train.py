@@ -11,7 +11,7 @@ from trainer import Trainer
 from utils import prepare_device
 
 
-# fix random seeds for reproducibility
+# 재현성을 위한 랜덤 시드 고정
 SEED = 123
 torch.manual_seed(SEED)
 torch.backends.cudnn.deterministic = True
@@ -19,13 +19,15 @@ torch.backends.cudnn.benchmark = False
 np.random.seed(SEED)
 
 def main(config):
+    # config는 자체적으로 logger를 가지고 있음
     logger = config.get_logger('train')
 
-    # setup data_loader instances
+    # init_obj : 모듈을 호출하여 객체를 생성 
+    # config 파일에서 data_loader 키워드를 찾아서 module_data 모듈을 호출
     data_loader = config.init_obj('data_loader', module_data)
     valid_data_loader = data_loader.split_validation()
 
-    # build model architecture, then print to console
+    # config 파일에서 arch 키워드를 찾아서 module_arch 모듈을 호출
     model = config.init_obj('arch', module_arch)
     logger.info(model)
 
@@ -36,6 +38,7 @@ def main(config):
         model = torch.nn.DataParallel(model, device_ids=device_ids)
 
     # get function handles of loss and metrics
+    # getattr로 모듈 안의 function 불러오기
     criterion = getattr(module_loss, config['loss'])
     metrics = [getattr(module_metric, met) for met in config['metrics']]
 
@@ -58,9 +61,9 @@ if __name__ == '__main__':
     args = argparse.ArgumentParser(description='PyTorch Template')
     args.add_argument('-c', '--config', default=None, type=str,
                       help='config file path (default: None)')
-    args.add_argument('-r', '--resume', default=None, type=str,
+    args.add_argument('-r', '--resume', default=None, type=str, # checkpoint
                       help='path to latest checkpoint (default: None)')
-    args.add_argument('-d', '--device', default=None, type=str,
+    args.add_argument('-d', '--device', default=None, type=str, # GPU
                       help='indices of GPUs to enable (default: all)')
 
     # custom cli options to modify configuration from default values given in json file.

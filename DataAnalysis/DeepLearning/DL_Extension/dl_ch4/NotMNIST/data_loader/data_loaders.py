@@ -3,7 +3,7 @@ import torch
 from torch.utils.data import Dataset
 from torchvision.io import read_image
 from torchvision import transforms as transforms
-# from torchvision import datasets
+from torchvision import datasets
 from base import BaseDataLoader
 
 

@@ -15,6 +15,7 @@ class BaseDataLoader(DataLoader):
         self.batch_idx = 0
         self.n_samples = len(dataset)
 
+        # 핵심 역할 : train_sampler와 valid_sampler를 나누어줌
         self.sampler, self.valid_sampler = self._split_sampler(self.validation_split)
 
         self.init_kwargs = {
@@ -26,6 +27,7 @@ class BaseDataLoader(DataLoader):
         }
         super().__init__(sampler=self.sampler, **self.init_kwargs)
 
+    # 가장 핵심적인 역할
     def _split_sampler(self, split):
         if split == 0.0:
             return None, None
@@ -42,9 +44,11 @@ class BaseDataLoader(DataLoader):
         else:
             len_valid = int(self.n_samples * split)
 
+        # 각자 index의 리스트를 가지고 있음
         valid_idx = idx_full[0:len_valid]
         train_idx = np.delete(idx_full, np.arange(0, len_valid))
 
+        # sampler : index 번호를 가지고 있다가 호출하면 순서를 섞어서 반환해줌
         train_sampler = SubsetRandomSampler(train_idx)
         valid_sampler = SubsetRandomSampler(valid_idx)
 
@@ -58,4 +62,6 @@ class BaseDataLoader(DataLoader):
         if self.valid_sampler is None:
             return None
         else:
+            # 이미 transform이 적용된 상태
+            # 이미지 데이터를 다룰 땐 찌그러진 데이터가 들어가면 안되기 때문에 코드 수정 필요 (transform 적용 안된 상태로 바꿔줘야 함)
             return DataLoader(sampler=self.valid_sampler, **self.init_kwargs)
