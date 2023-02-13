@@ -8,14 +8,26 @@
             "num_classes": 120
         }
     },
-    "data_loader": {
+    "train_data_loader": {
         "type": "DogBreedsDataLoader",
         "args":{
             "data_dir": "data/StanfordDogs/train",
             "batch_size": 128,
             "shuffle": true,
-            "validation_split": 0.1,
-            "num_workers": 2
+            "validation_split": 0,
+            "num_workers": 2,
+            "trsf_type": "train_trsf"
+        }
+    },
+    "valid_data_loader": {
+        "type": "DogBreedsDataLoader",
+        "args":{
+            "data_dir": "data/StanfordDogs/valid",
+            "batch_size": 128,
+            "shuffle": true,
+            "validation_split": 0,
+            "num_workers": 2,
+            "trsf_type": "valid_trsf"
         }
     },
     "optimizer": {

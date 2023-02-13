@@ -15,7 +15,7 @@ class BaseDataLoader(DataLoader):
         self.batch_idx = 0
         self.n_samples = len(dataset)
 
-        self.sampler, self.valid_sampler = self._split_sampler(self.validation_split)
+        # self.sampler, self.valid_sampler = self._split_sampler(self.validation_split)
 
         self.init_kwargs = {
             'dataset': dataset,
@@ -24,7 +24,7 @@ class BaseDataLoader(DataLoader):
             'collate_fn': collate_fn,
             'num_workers': num_workers
         }
-        super().__init__(sampler=self.sampler, **self.init_kwargs)
+        super().__init__(**self.init_kwargs)
 
     def _split_sampler(self, split):
         if split == 0.0:
