@@ -1,9 +1,9 @@
-{
-    "name": "Mnist_LeNet",
+{ 
+    "name": "VGG_16",
     "n_gpu": 1,
 
     "arch": {
-        "type": "MnistModel",
+        "type": "VGG16",
         "args": {
             "num_classes": 120
         }
@@ -53,10 +53,10 @@
         "epochs": 100,
 
         "save_dir": "saved/",
-        "save_period": 1,
+        "save_period": 3,
         "verbosity": 2,
         
-        "monitor": "min val_loss",
+        "monitor": "min val_accuracy",
         "early_stop": 10,
 
         "tensorboard": true

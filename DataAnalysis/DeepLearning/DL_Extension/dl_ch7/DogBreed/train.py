@@ -19,6 +19,7 @@ torch.backends.cudnn.benchmark = False
 np.random.seed(SEED)
 
 def main(config):
+    # config는 자체적으로 logger를 가지고 있음
     logger = config.get_logger('train')
 
     # setup data_loader instances

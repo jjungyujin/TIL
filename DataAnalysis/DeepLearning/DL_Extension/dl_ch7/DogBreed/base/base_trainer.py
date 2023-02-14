@@ -20,7 +20,7 @@ class BaseTrainer:
         cfg_trainer = config['trainer']
         self.epochs = cfg_trainer['epochs']
         self.save_period = cfg_trainer['save_period']
-        self.monitor = cfg_trainer.get('monitor', 'off')
+        self.monitor = cfg_trainer.get('monitor', 'off') # monitor 입력값이 없으면 off로 설정
 
         # configuration to monitor model performance and save best
         if self.monitor == 'off':
@@ -37,6 +37,7 @@ class BaseTrainer:
 
         self.start_epoch = 1
 
+        # save_dir 경로는 parse_config.py에서 업데이트 됨 (log, models / VGG16, MnistModel 등)
         self.checkpoint_dir = config.save_dir
 
         # setup visualization writer instance                
@@ -61,7 +62,6 @@ class BaseTrainer:
         not_improved_count = 0
         for epoch in range(self.start_epoch, self.epochs + 1):
             result = self._train_epoch(epoch)
-
             # save logged informations into log dict
             log = {'epoch': epoch}
             log.update(result)
@@ -69,9 +69,10 @@ class BaseTrainer:
             # print logged informations to the screen
             for key, value in log.items():
                 self.logger.info('    {:15s}: {}'.format(str(key), value))
-
+            
             # evaluate model performance according to configured metric, save best checkpoint as model_best
             best = False
+            
             if self.mnt_mode != 'off':
                 try:
                     # check whether model performance improved or not, according to specified metric(mnt_metric)
@@ -95,7 +96,7 @@ class BaseTrainer:
                                      "Training stops.".format(self.early_stop))
                     break
 
-            if epoch % self.save_period == 0:
+            if (epoch % self.save_period == 0) or (best == True):
                 self._save_checkpoint(epoch, save_best=best)
 
     def _save_checkpoint(self, epoch, save_best=False):
@@ -115,13 +116,13 @@ class BaseTrainer:
             'monitor_best': self.mnt_best,
             'config': self.config
         }
-        filename = str(self.checkpoint_dir / 'checkpoint-epoch{}.pth'.format(epoch))
-        torch.save(state, filename)
-        self.logger.info("Saving checkpoint: {} ...".format(filename))
         if save_best:
-            best_path = str(self.checkpoint_dir / 'model_best.pth')
-            torch.save(state, best_path)
+            filename = str(self.checkpoint_dir / f'best-{self.mnt_best}-epoch{epoch}.pth')
             self.logger.info("Saving current best: model_best.pth ...")
+        else:
+            filename = str(self.checkpoint_dir / 'checkpoint-epoch{}.pth'.format(epoch))
+            self.logger.info("Saving checkpoint: {} ...".format(filename))
+        torch.save(state, filename)
 
     def _resume_checkpoint(self, resume_path):
         """
