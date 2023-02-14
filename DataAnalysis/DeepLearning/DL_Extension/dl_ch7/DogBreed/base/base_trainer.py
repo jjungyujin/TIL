@@ -1,8 +1,9 @@
+import pandas as pd
 import torch
 from abc import abstractmethod
 from numpy import inf
 from logger import TensorboardWriter
-
+from utils import dingdong_bell
 
 class BaseTrainer:
     """
@@ -70,6 +71,13 @@ class BaseTrainer:
             for key, value in log.items():
                 self.logger.info('    {:15s}: {}'.format(str(key), value))
             
+            # stack_df에 log를 저장
+            if epoch == 1:
+                stack_df = pd.DataFrame.from_dict([log])
+            else:
+                new_row = pd.DataFrame.from_dict([log])
+                stack_df = pd.concat([stack_df, new_row], ignore_index=True)
+            
             # evaluate model performance according to configured metric, save best checkpoint as model_best
             best = False
             
@@ -96,9 +104,11 @@ class BaseTrainer:
                                      "Training stops.".format(self.early_stop))
                     break
 
-            if (epoch % self.save_period == 0) or (best == True):
+            if epoch % self.save_period == 0:
                 self._save_checkpoint(epoch, save_best=best)
+                dingdong_bell.post_dingdong(epoch, log, stack_df)
 
+    
     def _save_checkpoint(self, epoch, save_best=False):
         """
         Saving checkpoints
@@ -116,6 +126,7 @@ class BaseTrainer:
             'monitor_best': self.mnt_best,
             'config': self.config
         }
+        
         if save_best:
             filename = str(self.checkpoint_dir / f'best-{self.mnt_best}-epoch{epoch}.pth')
             self.logger.info("Saving current best: model_best.pth ...")

@@ -4,7 +4,7 @@ import slack_sdk
 import requests
 
 
-def load_secret(name, key_path="/Users/jung_yujin_1/workspace/TIL/DataAnalysis/DeepLearning/DL_Extension/api-dingdong"):
+def load_secret(name, key_path="/home/jungyujin/workspace/TIL/DataAnalysis/DeepLearning/DL_Extension/api-dingdong"):
     with open(os.path.join(key_path, "./secret.json"), "r") as f:
         secret = json.load(f)[name]
     return secret
@@ -19,6 +19,14 @@ class SlackMessenger:
         self.web_hook_url = secret["WEB_HOOK_URL"]
         self.client = slack_sdk.WebClient(token=self.token)
 
+    def send_file(self, file_title, file_path):
+        self.client.files_upload(
+            channels=self.channel,
+            title=file_title,
+            file=file_path,
+            filetype="png",
+        )
+    
     def alarm_msg(self, title, alarm_text, colour="#0000ff"):
         slack_text = make_alarm_format(title, alarm_text, colour)
         response = requests.post(self.web_hook_url, data=slack_text, headers={'Content-Type': 'application/json'})

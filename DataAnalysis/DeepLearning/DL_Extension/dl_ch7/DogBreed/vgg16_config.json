@@ -53,10 +53,10 @@
         "epochs": 100,
 
         "save_dir": "saved/",
-        "save_period": 3,
+        "save_period": 2,
         "verbosity": 2,
         
-        "monitor": "min val_accuracy",
+        "monitor": "max val_accuracy",
         "early_stop": 10,
 
         "tensorboard": true
