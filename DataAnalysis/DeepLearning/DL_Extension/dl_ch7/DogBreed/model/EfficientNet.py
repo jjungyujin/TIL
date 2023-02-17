@@ -2,26 +2,6 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from torchsummary import summary
-from torch import optim
-
-# dataset and transformation
-from torchvision import datasets
-import torchvision.transforms as transforms
-from torch.utils.data import DataLoader
-from torchvision import models
-from pathlib import Path
-
-# display images
-from torchvision import utils
-import matplotlib.pyplot as plt
-%matplotlib inline
-
-# utils
-import numpy as np
-from torchsummary import summary
-import time
-import copy
 
 class Swish(nn.Module):
     def __init__(self):
@@ -156,7 +136,6 @@ class EfficientNet(nn.Module):
             self.p = 1
             self.step = 0
 
-
         # efficient net
         self.upsample = nn.Upsample(scale_factor=scale, mode='bilinear', align_corners=False)
 
@@ -204,7 +183,7 @@ class EfficientNet(nn.Module):
         x = x.view(x.size(0), -1)
         x = self.dropout(x)
         x = self.linear(x)
-        return x
+        return F.log_softmax(x, dim=1)
 
 
     def _make_Block(self, block, repeats, in_channels, out_channels, kernel_size, stride, se_scale):

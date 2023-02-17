@@ -1,0 +1,64 @@
+{ 
+    "name": "EfficientNetB0",
+    "n_gpu": 1,
+
+    "arch": {
+        "type": "EfficientNet",
+        "args": {
+            "num_classes": 120
+        }
+    },
+    "train_data_loader": {
+        "type": "DogBreedsDataLoader",
+        "args":{
+            "data_dir": "data/StanfordDogs/train",
+            "batch_size": 128,
+            "shuffle": true,
+            "validation_split": 0,
+            "num_workers": 2,
+            "trsf_type": "train_trsf"
+        }
+    },
+    "valid_data_loader": {
+        "type": "DogBreedsDataLoader",
+        "args":{
+            "data_dir": "data/StanfordDogs/valid",
+            "batch_size": 128,
+            "shuffle": true,
+            "validation_split": 0,
+            "num_workers": 2,
+            "trsf_type": "valid_trsf"
+        }
+    },
+    "optimizer": {
+        "type": "Adam",
+        "args":{
+            "lr": 0.001,
+            "weight_decay": 0,
+            "amsgrad": true
+        }
+    },
+    "loss": "nll_loss",
+    "metrics": [
+        "accuracy", "top_k_acc"
+    ],
+    "lr_scheduler": {
+        "type": "StepLR",
+        "args": {
+            "step_size": 50,
+            "gamma": 0.1
+        }
+    },
+    "trainer": {
+        "epochs": 200,
+
+        "save_dir": "saved/",
+        "save_period": 5,
+        "verbosity": 2,
+        
+        "monitor": "max val_accuracy",
+        "early_stop": 1000,
+
+        "tensorboard": true
+    }
+}
