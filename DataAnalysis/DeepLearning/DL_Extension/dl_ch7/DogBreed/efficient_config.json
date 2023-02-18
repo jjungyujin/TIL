@@ -1,15 +1,15 @@
 { 
-    "name": "EfficientNetB7",
+    "name": "EfficientNetB5",
     "n_gpu": 1,
 
     "arch": {
         "type": "EfficientNet",
         "args": {
             "num_classes": 120,
-            "width_coef": 2.0,
-            "depth_coef": 3.1,
-            "scale": 2.6785714285714284,
-            "dropout": 0.5,
+            "width_coef": 1.6,
+            "depth_coef": 2.2,
+            "scale": 2.0357142857142856,
+            "dropout": 0.4,
             "se_scale": 4
         }
     },
@@ -17,7 +17,7 @@
         "type": "DogBreedsDataLoader",
         "args":{
             "data_dir": "data/StanfordDogs/train",
-            "batch_size": 128,
+            "batch_size": 8,
             "shuffle": true,
             "validation_split": 0,
             "num_workers": 2,
@@ -30,7 +30,7 @@
         "type": "DogBreedsDataLoader",
         "args":{
             "data_dir": "data/StanfordDogs/valid",
-            "batch_size": 128,
+            "batch_size": 8,
             "shuffle": true,
             "validation_split": 0,
             "num_workers": 2,
