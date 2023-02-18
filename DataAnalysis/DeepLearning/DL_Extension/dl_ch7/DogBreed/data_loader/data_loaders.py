@@ -4,6 +4,7 @@ from torchvision import datasets, transforms
 from torch.utils.data import Dataset
 from base import BaseDataLoader
 from PIL import Image
+from cutmix import CutMixCollator
 
 class DogBreedsDataset(Dataset):
     def __init__(self, dir_path, transform):
@@ -35,7 +36,11 @@ class DogBreedsDataset(Dataset):
         return img, target
 
 class DogBreedsDataLoader(BaseDataLoader):
-    def __init__(self, data_dir, batch_size, shuffle=True, validation_split=0.0, num_workers=1, training=True, trsf_type='train_trsf'):
+    def __init__(self, data_dir, batch_size, shuffle=True, validation_split=0.0, num_workers=1, training=True, trsf_type='train_trsf', use_cutmix=False, cutmix_alpha=0.5):
+        if use_cutmix:
+            collator = CutMixCollator(cutmix_alpha)
+        else :
+            collator = torch.utils.data.dataloader.default_collate
         transform_dic = {
             'train_trsf' : transforms.Compose([
                                     transforms.Resize(256),
@@ -66,4 +71,4 @@ class DogBreedsDataLoader(BaseDataLoader):
         }
         self.data_dir = data_dir
         self.dataset = DogBreedsDataset(Path(data_dir), transform=transform_dic[trsf_type])
-        super().__init__(self.dataset, batch_size, shuffle, validation_split, num_workers)
+        super().__init__(self.dataset, batch_size, shuffle, validation_split, num_workers, collator)

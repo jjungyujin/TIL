@@ -19,6 +19,7 @@ torch.backends.cudnn.benchmark = False
 np.random.seed(SEED)
 
 def main(config):
+    cutmix = config['train_data_loader']['args']['use_cutmix']
     # config는 자체적으로 logger를 가지고 있음
     logger = config.get_logger('train')
 
@@ -38,7 +39,11 @@ def main(config):
         model = torch.nn.DataParallel(model, device_ids=device_ids)
 
     # get function handles of loss and metrics
-    criterion = getattr(module_loss, config['loss'])
+    if cutmix:
+        train_criterion = cutmix.CutMixCriterion(reduction='mean')
+    else :
+        train_criterion = getattr(module_loss, config['loss'])
+    test_criterion = getattr(module_loss, config['loss'])
     metrics = [getattr(module_metric, met) for met in config['metrics']]
 
     # build optimizer, learning rate scheduler. delete every lines containing lr_scheduler for disabling scheduler
@@ -46,7 +51,7 @@ def main(config):
     optimizer = config.init_obj('optimizer', torch.optim, trainable_params)
     lr_scheduler = config.init_obj('lr_scheduler', torch.optim.lr_scheduler, optimizer)
 
-    trainer = Trainer(model, criterion, metrics, optimizer,
+    trainer = Trainer(model, train_criterion, test_criterion, metrics, optimizer,
                       config=config,
                       device=device,
                       data_loader=data_loader,
