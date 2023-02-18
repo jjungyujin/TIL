@@ -36,7 +36,7 @@ class DogBreedsDataset(Dataset):
         return img, target
 
 class DogBreedsDataLoader(BaseDataLoader):
-    def __init__(self, data_dir, batch_size, shuffle=True, validation_split=0.0, num_workers=1, training=True, trsf_type='train_trsf', use_cutmix=False, cutmix_alpha=0.5):
+    def __init__(self, data_dir, batch_size, shuffle=True, validation_split=0.0, num_workers=1, training=True, trsf_type='train_trsf', use_cutmix=False, cutmix_alpha=1.0):
         if use_cutmix:
             collator = CutMixCollator(cutmix_alpha)
         else :

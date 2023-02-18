@@ -18,7 +18,7 @@
             "num_workers": 2,
             "trsf_type": "train_trsf",
             "use_cutmix": true,
-            "cutmix_alpha": 0.5
+            "cutmix_alpha": 1.0
         }
     },
     "valid_data_loader": {
