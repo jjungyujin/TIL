@@ -21,7 +21,9 @@
             "shuffle": true,
             "validation_split": 0,
             "num_workers": 2,
-            "trsf_type": "train_trsf"
+            "trsf_type": "train_trsf",
+            "use_cutmix": false,
+            "cutmix_alpha": 0.5
         }
     },
     "valid_data_loader": {
