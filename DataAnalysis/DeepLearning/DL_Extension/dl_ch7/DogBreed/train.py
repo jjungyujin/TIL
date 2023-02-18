@@ -9,6 +9,7 @@ import model.model as module_arch
 from parse_config import ConfigParser
 from trainer import Trainer
 from utils import prepare_device
+from data_loader.cutmix import CutMixCriterion
 
 
 # fix random seeds for reproducibility
@@ -19,7 +20,7 @@ torch.backends.cudnn.benchmark = False
 np.random.seed(SEED)
 
 def main(config):
-    cutmix = config['train_data_loader']['args']['use_cutmix']
+    use_cutmix = config['train_data_loader']['args']['use_cutmix']
     # config는 자체적으로 logger를 가지고 있음
     logger = config.get_logger('train')
 
@@ -39,8 +40,8 @@ def main(config):
         model = torch.nn.DataParallel(model, device_ids=device_ids)
 
     # get function handles of loss and metrics
-    if cutmix:
-        train_criterion = cutmix.CutMixCriterion(reduction='mean')
+    if use_cutmix:
+        train_criterion = CutMixCriterion(reduction='mean')
     else :
         train_criterion = getattr(module_loss, config['loss'])
     test_criterion = getattr(module_loss, config['loss'])

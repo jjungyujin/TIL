@@ -4,7 +4,7 @@ from torchvision import datasets, transforms
 from torch.utils.data import Dataset
 from base import BaseDataLoader
 from PIL import Image
-from cutmix import CutMixCollator
+from data_loader.cutmix import CutMixCollator
 
 class DogBreedsDataset(Dataset):
     def __init__(self, dir_path, transform):
