@@ -105,9 +105,10 @@ class BaseTrainer:
                                      "Training stops.".format(self.early_stop))
                     break
                 
-            self._save_checkpoint(epoch, save_best=best)
+            if best and (self.mnt_best >= 0.024):
+                self._save_checkpoint(epoch, save_best=best)
             
-            if epoch % self.save_period == 0:    
+            elif epoch % self.save_period == 0:    
                 dingdong_bell.post_dingdong(epoch, log, stack_df)
 
     
