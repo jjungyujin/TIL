@@ -2,6 +2,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from base import BaseModel
+from torchvision import models
 
 class MnistModel(BaseModel):
     def __init__(self, num_classes=10):
@@ -304,3 +305,16 @@ class EfficientNet(nn.Module):
             self.p -= self.step
 
         return nn.Sequential(*layers)
+    
+class ResNet152():
+    def __init__(self, num_classes=10):
+        ResNet_pretrained = models.resnet50(weights = models.ResNet152_Weights.ImageNet1K_V2)
+        for name, param in ResNet_pretrained.named_parameters():
+            if 'fc' not in name :
+                param.requires_grad = False
+        # for child in ResNet_pretrained.children():
+        #     for param in child.parameters():
+        #         param.requires_grad = False
+        num_features = ResNet_pretrained.fc.in_features
+        ResNet_pretrained.fc = nn.Linear(num_features, num_classes)
+        return ResNet_pretrained
