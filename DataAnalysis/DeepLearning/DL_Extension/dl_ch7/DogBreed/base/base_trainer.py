@@ -105,11 +105,13 @@ class BaseTrainer:
                                      "Training stops.".format(self.early_stop))
                     break
                 
-            if best and (self.mnt_best >= 0.024):
-                self._save_checkpoint(epoch, save_best=best)
+            # if best and (self.mnt_best >= 0.024):
+            #     self._save_checkpoint(epoch, save_best=best)
             
-            elif epoch % self.save_period == 0:    
-                dingdong_bell.post_dingdong(epoch, log, stack_df)
+            if epoch % self.save_period == 0: 
+                self._save_checkpoint(epoch, save_best=best)
+                if epoch % 10 == 0:
+                    dingdong_bell.post_dingdong(epoch, log, stack_df)
 
     
     def _save_checkpoint(self, epoch, save_best=False):
@@ -131,12 +133,12 @@ class BaseTrainer:
         }
         
         if save_best:
-            filename = str(self.checkpoint_dir / f'best-{self.mnt_best}-epoch{epoch}.pth')
-            self.logger.info("Saving current best: model_best.pth ...")
-        else:
-            filename = str(self.checkpoint_dir / 'checkpoint-epoch{}.pth'.format(epoch))
-            self.logger.info("Saving checkpoint: {} ...".format(filename))
-        torch.save(state, filename)
+            filename = str(self.checkpoint_dir / f'best_model.pth')
+            self.logger.info(f"Saving current best-{self.mnt_best}-epoch{epoch}: model_best.pth ...")
+            torch.save(state, filename)
+        # else:
+        #     filename = str(self.checkpoint_dir / 'checkpoint-epoch{}.pth'.format(epoch))
+        #     self.logger.info("Saving checkpoint: {} ...".format(filename))
 
     def _resume_checkpoint(self, resume_path):
         """
