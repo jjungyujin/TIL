@@ -112,7 +112,7 @@ class VGG16(nn.Module):
         out = self.fc(out)
         out = self.fc1(out)
         out = self.fc2(out)
-        return F.log_softmax(out, dim=1)
+        return out
 
 class Swish(nn.Module):
     def __init__(self):
