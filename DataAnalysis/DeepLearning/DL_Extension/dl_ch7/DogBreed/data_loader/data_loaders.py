@@ -44,12 +44,12 @@ class DogBreedsDataLoader(BaseDataLoader):
         transform_dic = {
             'train_trsf' : transforms.Compose([
                                     transforms.Resize(256),
-                                    # transforms.CenterCrop(224),
-                                    transforms.RandomResizedCrop(224),
-                                    transforms.RandomRotation(30),
-                                    transforms.RandomHorizontalFlip(),
+                                    transforms.CenterCrop(224),
+                                    # transforms.RandomResizedCrop(224),
+                                    # transforms.RandomRotation(30),
+                                    # transforms.RandomHorizontalFlip(),
                                     transforms.ColorJitter(),
-                                    transforms.RandomVerticalFlip(),
+                                    # transforms.RandomVerticalFlip(),
                                     transforms.ToTensor(),
                                     transforms.Normalize([0.485, 0.456, 0.406],
                                                         [0.229, 0.224, 0.225])
