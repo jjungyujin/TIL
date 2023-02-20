@@ -7,7 +7,7 @@ from dingdong import SlackMessenger
 from pathlib import Path
 
 def post_dingdong(epoch, log, stack_dataframe):
-  dingdong_text = f"train_loss: {log['loss']} \n val_loss: {log['val_loss']} \n train_acc: {log['accuracy']} \n val_acc: {log['val_accuracy']} \n train_top_k_acc: {log['top_k_acc']} \n val_top_k_acc: {log['val_top_k_acc']}"
+  dingdong_text = f"train_loss: {log['loss']} \n val_loss: {log['val_loss']} \n train_acc: {log['accuracy']} \n val_acc: {log['val_accuracy']}"
   dingdong_bell = SlackMessenger()
   dingdong_bell.alarm_msg(title=f"epoch: {epoch}", alarm_text=dingdong_text, colour="#F7DC6F")
   
