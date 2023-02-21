@@ -1,9 +1,9 @@
 import torch
 
-def accuracy(output, target):
+def accuracy(output, target, num=1):
     with torch.no_grad():
         if isinstance(target, (tuple, list)):
-            num = len(target)
+            
             _, preds = torch.max(output, dim=1)
             targets1, targets2, lam = target
             correct1 = preds.eq(targets1).sum().item()
