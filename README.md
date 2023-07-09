@@ -65,6 +65,11 @@
 - [Deep Learning 기초](https://github.com/jjungyujin/Lecture_DeepLearning_2022)
 - [Deep Learning Extension](https://github.com/jjungyujin/TIL/tree/main/DataAnalysis/DeepLearning/DL_Extension)
 
+### 🗣 Natural Language Processing
+
+- [Langchain Quick Start](https://github.com/jjungyujin/NLP/Langchain/QuickStart.ipynb)
+- [Langchain Module](https://github.com/jjungyujin/NLP/Langchain/modules.ipynb)
+
 ### ☁️ Cloud Computing
 
 - [Amazon Web Service](https://github.com/jjungyujin/TIL/blob/main/CloudComputing/AWS.md)
