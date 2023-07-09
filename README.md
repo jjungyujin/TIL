@@ -67,8 +67,8 @@
 
 ### 🗣 Natural Language Processing
 
-- [Langchain Quick Start](https://github.com/jjungyujin/NLP/Langchain/QuickStart.ipynb)
-- [Langchain Module](https://github.com/jjungyujin/NLP/Langchain/modules.ipynb)
+- [Langchain Quick Start](https://github.com/jjungyujin/TIL/blob/main/NLP/Langchain/QuickStart.ipynb)
+- [Langchain Module](https://github.com/jjungyujin/TIL/blob/main/NLP/Langchain/modules.ipynb)
 
 ### ☁️ Cloud Computing
 
