@@ -1,3 +1,5 @@
 .DS_Store
-data
 logs
+secret.json
+DataAnalysis/MachineLearning/Taurus/data/*.csv
+DataAnalysis/MachineLearning/ML_Extension/ml_ch7/data/lab_*
