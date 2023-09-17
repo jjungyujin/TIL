@@ -1,5 +1,4 @@
 ## 01. AWS 대표 서비스 소개
-해당 문서는 코드잇의 클라우드 컴퓨팅 강의를 기반으로 작성되었습니다.
 
 ### Elastic Compute Cloud (EC2)
 컴퓨팅 기능을 갖고 있는 자원을 할당받는 서비스  
@@ -43,7 +42,7 @@ AWS가 자동으로 실시간 상황에 맞게 인스턴스 개수를 조절해�
 ### Region
 AWS의 데이터 센터가 있는 지역  
 ![region](aws_region.png)  
-![region](aws_region_table.png)
+![region](aws_region_table.png)  
 ⬆️ 왼쪽 : aws 공식 region 명징, 오른쪽 : 전세계 region 이름  
 
 
