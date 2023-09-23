@@ -11,6 +11,7 @@
 ### 🌱 VS Code
 
 - [VScode Extension](https://github.com/jjungyujin/TIL/blob/main/vs_code/VScode_Extension.md)
+- [VScode Debug](https://github.com/jjungyujin/TIL/blob/main/vs_code/VScode_Debug.md)
 
 ### 🌱 crawling
 
