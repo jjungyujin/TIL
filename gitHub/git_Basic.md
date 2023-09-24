@@ -67,19 +67,30 @@ git remote add origin (리모트 레포지토리의 주소)
 ```
 
 push 하기  
-> 처음 push를 할 때에만  `-u origin master` 옵션을 사용하고 이후에는 `git push`로 변경사항 반영
+> 처음 push를 할 때에만  `-u origin {branch_name}` 옵션을 사용하고 이후에는 `git push`로 변경사항 반영
 ```terminal
-git push -u origin master
+git push -u origin main
 ```
 
 pull 하기
 ```terminal
-git pull
+git pull origin main
 ```
 
 ## README.md
 GitHub의 레포지토리에서는 README.md를 화면에 보여주도록 설정되어 있다.  
 주로 프로젝트의 목차나 핵심 내용을 작성해두면 된다.
+
+## requirement.txt
+개발한 프로그램을 베포하여 다른 사람에게 공유하려는 경우,  
+해당 프로그램을 위해 설치한 패키지 정보도 공유하여 사용자가 동일한 환경에서 실행할 수 있도록 해야한다.
+```
+# 현재 활성화된 가상환경에 설치된 패키지 정보를 파일로 생성
+pip freeze > requirements.txt
+
+# 다운로드 받은 txt 파일로 현재 가상환경에 패키지 설치
+pip install -r requirements.txt
+```
 
 # 📎 04. 커밋 다루기
 ## 커밋 히스토리 살펴보기
@@ -98,8 +109,8 @@ git config alias.history 'log  --pretty=oneline'
 git commit --amend
 ```
 위 코드를 실행하면 최신 커밋에 대한 창이 뜬다.  
-> **i**를 누르면 입력 모드로 전환되어 메세지를 수정할 수 있고,  
-**esc**를 누른 후 `:wq`를 입력하면 수정이 완료된다.
+> `i`를 누르면 입력 모드로 전환되어 메세지를 수정할 수 있고,  
+`esc`를 누른 후 `:wq`를 입력하면 수정이 완료된다.
 
 ## 예전 커밋 수정하기
 ```terminal
@@ -163,14 +174,14 @@ fork한 레포지토리에서 작업하기 전 branch를 생성하여 각 기능
 git rebase -i HEAD~3
 ```
 위 코드를 실행하면 해당 선택한 커밋들에 대한 창이 뜬다.  
-> 입력 모드로 전환 : **i**  
+> 입력 모드로 전환 : `i`  
 가장 상단에 있던 커밋은 `pick`으로, 나머지는 `s`로 설정  
 
 설정창을 닫으면 커밋 메세지에 대한 창이 뜬다.  
 > 입력 모드에서 rebase 커밋에 대한 메세지를 작성하고 입력 모드를 닫기
 
 ## 강제로 push하기
-리모트 레포지토리의 commit을 로컬 레포지토리의 commit이 포함하고 있지 않으면 push 작업에 오류가 발생한다.  
+이미 리모트 레포지토리에 올라간 commit에 대해 수정 후 다시 push를 시도하면 에러가 발생한다.  
 이런 경우 `-f` 옵션을 통해 강제로 `push`할 수 있다.
 ```terminal
 git push -f
@@ -179,9 +190,24 @@ git push -f
 ## 프로젝트 레포지토리 main을 내 main으로 가져오기
 프로젝트 레포지토리 main을 pull 해오려면 내 로컬 레포지토리의 remote에 추가해주어야 한다.
 ```terminal
+# remote 추가
 git remote add teamlab (프로젝트 레포지토리 주소)
+
+# main branch 가져오기
 git pull teamlab main
+
+# 내 레포지토리의 main에 push
 git push
 ```
 > remote 확인하기 : `git  remote -v`  
 내 리모트 레포지토리는 `origin`, 프로젝트 레포지토리는 `teamlab`으로 설정되어 있을 것이다.
+
+## branch 삭제하기
+목표한 작업이 끝나고 상위 branch에 제대로 반영되었다면 해당 branch는 더이상 사용하지 않으므로 삭제한다.
+```terminal
+# 원격(리모트) 브랜치 삭제
+git push origin --delete feat/sidebar
+
+# 로컬 브랜치 삭제
+git branch -d feat/sidebar
+```
