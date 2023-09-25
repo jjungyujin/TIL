@@ -70,6 +70,7 @@
 
 - [Langchain Quick Start](https://github.com/jjungyujin/TIL/blob/main/NLP/Langchain/QuickStart.ipynb)
 - [Langchain Module](https://github.com/jjungyujin/TIL/blob/main/NLP/Langchain/modules.ipynb)
+- [Langchain Visualization - Streamlit](https://github.com/jjungyujin/TIL/blob/main/NLP/streamlit.md)
 
 ### ☁️ Cloud Computing
 
