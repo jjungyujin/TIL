@@ -17,7 +17,7 @@ digest = m.hexdigest()
 - 해싱한 문자열은 복구할 수 없다.
 
 
-# 설정 관리 - Hierarchical Yaml Config
+# 설정 관리 - Hierarchical Yaml Config w/Hydra
 ### 디렉토리 구조
 디렉토리 구조에 따라 config 파일도 hierarchy하게 관리할 수 있다.
 ```
@@ -46,13 +46,13 @@ monster
 
 ```yaml
   # hydra : 페이스북에서 머신러닝 실험 등 복잡한 어플리케이션을 구성하기 위해 사용하는 오픈소스 프레임워크
-  # python class의 input/output type check 등을 도와줌
+  # hierarchy 구조로 관리함으로써 중복된 코드를 확연히 줄이고 구현 정확성과 속도를 높임
   hydra:
     job:
       # main 함수에 넘어가기 전에 os.chdir을 호출하여 working directory를 변경하도록 함
       chdir: True
 
-  defaults:
+  defaults: # 대표적인 hydra 문법
     # dir_path@dict_name.key_name: yaml_file_name
     # dictionary 생성, Key에 (yaml file로 생성한) 객체를 value로 align
     - character@character.1: YUJIN
