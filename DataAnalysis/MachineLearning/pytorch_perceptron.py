@@ -23,7 +23,7 @@ class CustomDataset(Dataset):
         return self.length
 
 
-|# %%
+# %%
 # Single Perceptron
 
 
